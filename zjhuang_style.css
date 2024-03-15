@@ -4,14 +4,14 @@
   input,
   select,
   textarea {
-    font-family: "Roboto", "Open Sans", "Helvetica", sans-serif;
+    font-family: "Inter", "Open Sans", "Helvetica", sans-serif;
   }
 }
 
 body {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
-  font-family: "Roboto", "Open Sans", sans-serif;
+  font-family: "Inter", "Open Sans", sans-serif;
 }
 
 a,
