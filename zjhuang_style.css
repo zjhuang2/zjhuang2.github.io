@@ -18,7 +18,7 @@ body {
 
 a,
 a:hover {
-  color: #508D69;
+  color: #ff533d;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -40,7 +40,7 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #FF6D60;
+  background-color: #ffffff;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
@@ -50,7 +50,7 @@ h1 {
 }
 
 #topbar .navbar-brand {
-  color: #F7D060;
+  color: #01abaa;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
   font-weight: 400;
@@ -63,13 +63,13 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #F7D060;
+  color: #008f95;
   font-weight: 600;
   text-decoration: none;
 }
 
 #topbar .navbar-brand a:hover {
-  color: #F3E99F;
+  color: #66ab8c;
   text-decoration: none;
 }
 
