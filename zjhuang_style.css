@@ -4,14 +4,16 @@
   input,
   select,
   textarea {
-    font-family: "Inter", "Open Sans", "Helvetica", sans-serif;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
   }
 }
 
 body {
   font-weight: 400;
   font-size: 14px;
-  font-family: "Inter", "Open Sans", sans-serif;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
 }
 
 a,
