@@ -54,7 +54,7 @@ h1 {
   color: #ffcb05;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
-  font-weight: 400;
+  font-weight: 500;
   /*text-transform: uppercase;*/
 }
 
@@ -65,7 +65,7 @@ h1 {
 
 #topbar .navbar-brand a {
   color: #ffcb05;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
 }
 
