@@ -4,7 +4,7 @@
   input,
   select,
   textarea {
-    font-family: arial, sans-serif;
+    font-family: 'Reddit Sans', arial, sans-serif;
     font-weight: 300;
     font-style: normal;
   }
@@ -13,7 +13,7 @@
 body {
   font-weight: 300;
   font-size: 14px;
-  font-family: arial, sans-serif;
+  font-family: 'Reddit Sans', arial, sans-serif;
   font-style: normal;
 }
 
