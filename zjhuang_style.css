@@ -83,11 +83,16 @@ h1 {
 
 .label {
   font-weight: normal;
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 20;
 }
 
 .label-award {
   background-color: #9a3324;
   margin-right: 5px;
+  color: white;
+  border-radius: 20;
 }
 
 .paperimage {
