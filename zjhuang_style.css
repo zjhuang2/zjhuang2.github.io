@@ -19,7 +19,7 @@ body {
 
 a,
 a:hover {
-  color: #9a3324;
+  color: #C1724B;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -41,7 +41,7 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #00274c;
+  background-color: #ffffff;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
@@ -51,7 +51,7 @@ h1 {
 }
 
 #topbar .navbar-brand {
-  color: #ffcb05;
+  color: #23C2BD;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
   font-weight: 500;
@@ -64,7 +64,7 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #ffcb05;
+  color: #38C2BA;
   font-weight: 600;
   text-decoration: none;
 }
@@ -89,7 +89,7 @@ h1 {
 }
 
 .label-award {
-  background-color: #9a3324;
+  background-color: #C1724B;
   margin-right: 5px;
   color: white;
   border-radius: 20;
