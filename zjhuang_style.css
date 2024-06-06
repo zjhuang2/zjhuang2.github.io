@@ -4,22 +4,22 @@
   input,
   select,
   textarea {
-    font-family: 'Reddit Sans', arial, sans-serif;
-    font-weight: 300;
+    font-family: 'Gabarito', arial, sans-serif;
+    font-weight: 400;
     font-style: normal;
   }
 }
 
 body {
-  font-weight: 300;
-  font-size: 14px;
-  font-family: 'Reddit Sans', arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Gabarito', arial, sans-serif;
   font-style: normal;
 }
 
 a,
 a:hover {
-  color: #C1724B;
+  color: #af4507;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -29,11 +29,12 @@ a:hover {
 
 p {
   margin: 0 0 1em;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h1 {
   font-size: x-large;
+  font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
   margin-top: 5px;
@@ -41,17 +42,16 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #F2F2F2;
+  background-color: #034d3c;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-color: #777777;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-color: #034d3c;
   margin-bottom: 3%;
 }
 
 #topbar .navbar-brand {
-  color: #23C2BD;
+  color: #FA862D;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
   font-weight: 500;
@@ -64,13 +64,14 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #38C2BA;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
+  font-size: 36px;
 }
 
 #topbar .navbar-brand a:hover {
-  color: #cfc096;
+  color: #FA862D;
   text-decoration: none;
 }
 
@@ -89,7 +90,7 @@ h1 {
 }
 
 .label-award {
-  background-color: #C1724B;
+  background-color: #FA622D;
   margin-right: 5px;
   color: white;
   border-radius: 20;
@@ -104,12 +105,12 @@ h1 {
   margin-bottom: 2em;
   vertical-align: top;
   padding-left: 0px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .vital-info {
   margin-top: 1em;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .vital-info h4 {
@@ -118,7 +119,7 @@ h1 {
 
 .vital-info h5 {
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -128,7 +129,7 @@ h1 {
 }
 
 .bio {
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 .btn-link {
@@ -160,5 +161,9 @@ h1 {
 .newsItem {
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 20px;
+}
+
+img {
+  border-radius: 20px;
 }
