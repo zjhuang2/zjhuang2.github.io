@@ -4,16 +4,16 @@
   input,
   select,
   textarea {
-    font-family: 'Gabarito', arial, sans-serif;
-    font-weight: 400;
+    font-family: 'articulat-cf', arial, sans-serif;
+    font-weight: 300;
     font-style: normal;
   }
 }
 
 body {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
-  font-family: 'Gabarito', arial, sans-serif;
+  font-family: 'articulat-cf', arial, sans-serif;
   font-style: normal;
 }
 
