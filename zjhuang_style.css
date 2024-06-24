@@ -4,22 +4,22 @@
   input,
   select,
   textarea {
-    font-family: 'articulat-cf', arial, sans-serif;
-    font-weight: 300;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: 400;
     font-style: normal;
   }
 }
 
 body {
-  font-weight: 300;
   font-size: 20px;
-  font-family: 'articulat-cf', arial, sans-serif;
+  font-family: 'neue-haas-grotesk-text', arial, sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
 a,
 a:hover {
-  color: #af4507;
+  color: #9A3324;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -42,11 +42,11 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #034d3c;
+  background-color: #00274C;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-color: #034d3c;
+  border-color: #00274C;
   margin-bottom: 3%;
 }
 
@@ -64,7 +64,7 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #ffffff;
+  color: #FFCB05;
   font-weight: 600;
   text-decoration: none;
   font-size: 36px;
@@ -90,9 +90,9 @@ h1 {
 }
 
 .label-award {
-  background-color: #FA622D;
+  background-color: #575294;
   margin-right: 5px;
-  color: white;
+  color: #FFCB05;
   border-radius: 20;
 }
 
