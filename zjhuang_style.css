@@ -19,7 +19,7 @@ body {
 
 a,
 a:hover {
-  color: #8F2A05;
+  color: #0a625b;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -42,11 +42,11 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #044D3C;
+  background-color: #134857;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-color: #044D3C;
+  border-color: #008dda;
   margin-bottom: 3%;
 }
 
@@ -64,7 +64,7 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #ffffff;
+  color: #7fecad;
   font-weight: 500;
   text-decoration: none;
   font-size: 36px;
