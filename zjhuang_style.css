@@ -4,7 +4,7 @@
   input,
   select,
   textarea {
-    font-family: "Helvetica Neue", "inter-variable", "neue-haas-grotesk-text", sans-serif;
+    font-family: "Helvetica", "inter-variable", "neue-haas-grotesk-text", sans-serif;
     font-style: normal;
     font-weight: 300;
   }
@@ -12,7 +12,7 @@
 
 body {
   font-size: 18px;
-  font-family: "Helvetica Neue","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
+  font-family: "Helvetica","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
   font-style: normal;
   font-weight: 300;
 }
