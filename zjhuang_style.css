@@ -4,23 +4,24 @@
   input,
   select,
   textarea {
-    font-family:  "neue-haas-grotesk-text", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    /* font-variation-settings: "wght" 400, "wdth" 400; */
+    font-family: "inter-variable", "neue-haas-grotesk-text", sans-serif;
+    /* font-style: normal;
+    font-weight: 400; */
+    font-variation-settings: "slnt" 0, "wght" 300;
   }
 }
 
 body {
   font-size: 20px;
-  font-family: 'neue-haas-grotesk-text', arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
+  /* font-style: normal;
+  font-weight: 400; */
+  font-variation-settings: "slnt" 0, "wght" 300;
 }
 
 a,
 a:hover {
-  color: #1c4354;
+  color: #0E7AFE;
   text-decoration: none;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
@@ -39,6 +40,7 @@ h1 {
   font-weight: 600;
   margin-bottom: 10px;
   margin-top: 5px;
+  font-variation-settings: "slnt" 0, "wght" 500;
 }
 
 /* bootstrap properties */
@@ -48,14 +50,14 @@ h1 {
   background-repeat: no-repeat;
   filter: none;
   border-color: #008dda;
-  margin-bottom: 3%;
+  margin-bottom: 2%;
 }
 
 #topbar .navbar-brand {
   color: #FA862D;
   font-size: 2.3em;
   /*font-family: 'Open Sans',Helvetica,sans-serif;*/
-  font-weight: 500;
+  font-weight: 600;
   /*text-transform: uppercase;*/
 }
 
@@ -68,7 +70,8 @@ h1 {
   color: #eaf4fc;
   font-weight: 600;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 28px;
+  font-variation-settings: "slnt" 0, "wght" 500;
 }
 
 #topbar .navbar-brand a:hover {
@@ -85,16 +88,19 @@ h1 {
 
 .label {
   font-weight: normal;
-  padding-left: 1%;
-  padding-right: 1%;
-  border-radius: 20;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  padding-top: 0.5%;
+  padding-bottom: 0.3%;
+  border-radius: 5px;
+  background-color: #FF3030;
+  font-size: 16px;
 }
 
 .label-award {
-  background-color: #ee3e4b;
   margin-right: 5px;
   color: #eaf6de;
-  border-radius: 20;
+  border-radius: 20
 }
 
 .paperimage {
@@ -107,6 +113,10 @@ h1 {
   vertical-align: top;
   padding-left: 0px;
   font-size: 18px;
+}
+
+.paper-title {
+  font-variation-settings: "slnt" 0, "wght" 500;
 }
 
 .vital-info {
