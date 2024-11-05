@@ -34,17 +34,19 @@ portrait_caption: >-
 
 education:
 - name: University of Michigan
-  logo: /assets/images/badges/MIT_Social_circle.png
+  logo: /assets/images/badges/UMlogo.png
   position: >- 
     Computer Science and Engineering <br/>
     Ph.D. Student
   date: Sep. 2024 - present
 - name: University of Michigan
-  logo: /assets/images/badges/PKU_red.png
-  position: M.S. Information, School of Information
+  logo: /assets/images/badges/UMlogo.png
+  position: >- 
+    School of Information <br/>
+    M.S., Human-Computer Interaction
   date: Sep. 2021 - Jul. 2023
 - name: The Ohio State University
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/OSUlogo.png
   position: B.S. in Data Science and Psychology
   date: Sep. 2016 - May 2021
 

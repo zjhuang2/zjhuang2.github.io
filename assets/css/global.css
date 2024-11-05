@@ -67,3 +67,19 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+.edu-text {
+    font-weight: 700;
+}
+
+.school-logo {
+    margin-right: 5;
+}
+
+.pub-title {
+    font-size: large;
+    font-weight: 700
+}
+
+.pub-author {
+    font-size: medium;
+}
