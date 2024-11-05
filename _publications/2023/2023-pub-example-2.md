@@ -3,6 +3,7 @@ title:          "Not There Yet: Feasibility and Challenges of Mobile Sound Recog
 date:           2023-10-28 00:01:00 +0800
 selected:       true
 pub:            "ASSETS 2023"
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Best Paper Honorable Mention</span>'
 # pub_date:       "2023"
 # abstract: >-
 #   Photo by Dessy Dimcheva on Unsplash. Please keep the description of your publication as brief as possible. 1~2 sentences is ideal. Otherwise, it will look too noisy. This is a <strong>counterexample</strong> to show how the publication will look like when the abstract is too long.
