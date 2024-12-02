@@ -7,7 +7,8 @@ navbar_title: Showcase
 {% assign cards_by_group = site.showcase | sort: "date" | reverse | where: "show", true | group_by_exp: "item", "item.group" %}
 
 {% for group in cards_by_group %}
-<h1>{{ group.name }}</h1>
+<h1>Work In Progress...</h1>
+<!-- <h1>{{ group.name }}</h1>
 <div class="row grid mb-4">
     <div class="grid-sizer col-1"></div>
     {% for item in group.items %}
@@ -23,5 +24,5 @@ navbar_title: Showcase
         </div>
     </div>
     {% endfor %}
-</div>
+</div> -->
 {% endfor %}
