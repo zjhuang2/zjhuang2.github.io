@@ -4,23 +4,24 @@
   input,
   select,
   textarea {
-    font-family: "Helvetica", "inter-variable", "neue-haas-grotesk-text", sans-serif;
+    font-family: "Lato", "inter-variable", "neue-haas-grotesk-text", sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
   }
 }
 
 body {
   font-size: 18px;
-  font-family: "Helvetica","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
+  font-family: "Lato","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 a,
 a:hover {
-  color: #0E7AFE;
+  color: #dd1c1a;
   text-decoration: none;
+  font-weight: 500;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
   /* Michigan Blue: #00274C */
@@ -30,6 +31,7 @@ a:hover {
 p {
   margin: 0 0 1em;
   font-size: 18px;
+  color: #2d3142
 }
 
 h1 {
@@ -43,11 +45,11 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #333333;
+  background-color: #ffb703;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-color: #008dda;
+  border-color: #023047;
   margin-bottom: 2%;
 }
 
@@ -65,8 +67,8 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #eaf4fc;
-  font-weight: 200;
+  color: #023047;
+  font-weight: 600;
   text-decoration: none;
   font-size: 28px;
 }
@@ -90,7 +92,7 @@ h1 {
   padding-top: 0.3%;
   padding-bottom: 0.3%;
   border-radius: 5px;
-  background-color: #FF3030;
+  background-color: #0ead69;
   font-size: 16px;
   font-weight: 300;
 }
@@ -114,7 +116,8 @@ h1 {
 }
 
 .paper-title {
-  font-weight: 400;
+  font-weight: 600;
+  color: #2d3142;
 }
 
 .vital-info {
