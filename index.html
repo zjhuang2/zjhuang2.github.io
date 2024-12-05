@@ -1,30 +1,346 @@
----
-layout: default
-title : Homepage
-navbar_title: Home
----
-{% include widgets/profile_card.html %}
+<!DOCTYPE html>
+<!-- Website styles inspired by Michael Bernstein https://hci.stanford.edu/msb/ and Anhong Guo https:guoanhong.com -->
 
-{% include widgets/debug_repo_name.html %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jeremy Z. Huang</title>
+    <!--Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-{% include widgets/debug_url.html %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    
+    <!--reddit sans fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
-{% if site.data.display.homepage.show_experience %}
-    {% include widgets/experience_card.html %}
-{% endif %}
+    <!--Gabarito-->
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!--Outfit-->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-{% if site.data.display.homepage.show_news %}
-    {% assign count_news = site.news | size %}
-    {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-    {% endif %}
-{% endif %}
+    <!--Articulat-->
+    <link rel="stylesheet" href="https://use.typekit.net/rts0bbu.css">
+    
+    <link href="zjhuang_style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      id="topbar"
+      class="navbar navbar-inverse navbar-static-top"
+      role="navigation"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="." target="_self">Jeremy Zhengqi Huang</a>
+        </div>
+      </div>
+    </div>
 
-{% if site.data.display.homepage.show_selected_publications %}
-    {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-    {% 
-        include widgets/publication_card.html 
-        publications=pubs
-        title='<i class="fas fa-star"></i> Selected Publications'
-    %}
-{% endif %}
+    <div class="container">
+      <div class="row">
+        <!--Main Content Body-->
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-9">
+              <img
+                src="files/huang.jpeg"
+                class="img-fluid"
+                style="margin-bottom: 10px"
+                alt="Jeremy Huang wearing a brown trucker shirt."
+              />
+            </div>
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p>
+                I am a first-year Ph.D. student at the University of Michigan Computer Science and Engineering, advised by <a href="https://web.eecs.umich.edu/~profdj/">Dhruv Jain</a>. 
+                Working at the intersection of HCI and accessibility, my research explores interfaces that combines the strengths of human and artificial intelligence and applies this synergy to enhance the fundamental human experiences (e.g., sensemaking and creative activities) of people with different abilities.
+              </p>
+              <p>
+                I am part of the
+                <a href="https://accessibility.eecs.umich.edu/"
+                  >Soundability Lab</a
+                >
+                at the University of Michigan CSE. I
+                recently graduated with a Master's Degree in Information (UX
+                Research and Design specialization) at the University of
+                Michigan School of Information. My undergraduate studies at Ohio State focused on data
+                science and psychology. I also worked as a research assistant at
+                the <a href="https://www.caidelab.com/">CAIDe Lab</a> advised by
+                <a href="https://psychology.osu.edu/people/shoots-reinhard.1"
+                  >Brittany Shoots-Reinhard</a
+                >.
+              </p>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px">
+              <div class="col-md-12">
+                <h1>News</h1>
+                <div class="row newsItem">
+                  <div class="date col-md-3">March 14, 2024</div>
+                  <div class="col-md-9">
+                    Our Human-AI Collaborative Sound Awareness (HACS) paper is accepted to CHI 2024!
+                  </div>
+                </div>
+                <div class="row newsItem">
+                  <div class="date col-md-3">March 1, 2024</div>
+                  <div class="col-md-9">
+                    I will be staying in Ann Arbor to complete my Ph.D. studies at Michigan CSE!
+                  </div>
+                </div>
+                <div class="row newsItem">
+                  <div class="date col-md-3">Jun 30, 2023</div>
+                  <div class="col-md-9">
+                    Field Study of Mobile Recognition System accepted to ASSETS
+                    2023
+                  </div>
+                </div>
+                <div class="row newsItem">
+                  <div class="date col-md-3">May 4, 2023</div>
+                  <div class="col-md-9">
+                    Graduated with an Master's in Human-Computer Interaction at
+                    UMSI!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12"><h1>Publications</h1></div>
+            </div>
+
+            <div class="papers" id="papers">
+              <!--CHI 24 - HACS-->
+              <div class="row paper-row" id="2024">
+                <div class="col-md-3 col-xs-4">
+                  <a href="#"
+                    ><img
+                      class="paperimage img img-fluid"
+                      src="files/masksound.png"
+                      alt="A picture of the MaskSound application prototype"
+                  /></a>
+                </div>
+                <div class="col-md-9 col-xs-8">
+                  <div>
+                    <a class="paper-title" href=""
+                      >Exploring Sound Masking Approaches to Support People with Autism in Managing Noise Sensitivity</a
+                    >
+                  </div>
+                  <div>
+                    Anna Y Park, Andy Jin, <b>Jeremy Zhengqi Huang</b>, Jesse Carr, Dhruv Jain
+                  </div>
+                  <div>ASSETS 2024</div>
+                  <div>
+                    <a href="">PDF</a
+                    >&nbsp;&middot;&nbsp;<a href="">ACM DL</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+            <div class="papers" id="papers">
+              <!--CHI 24 - HACS-->
+              <div class="row paper-row" id="2024">
+                <div class="col-md-3 col-xs-4">
+                  <a href="#"
+                    ><img
+                      class="paperimage img img-fluid"
+                      src="files/HACS.png"
+                      alt="A picture of a diagram that illustrates the HACS approach"
+                  /></a>
+                </div>
+                <div class="col-md-9 col-xs-8">
+                  <div>
+                    <a class="paper-title" href="https://dl.acm.org/doi/10.1145/3613904.3642062"
+                      >A Human-AI Collaborative Approach for Designing Sound Awareness Systems</a
+                    >
+                  </div>
+                  <div>
+                    <b>Jeremy Zhengqi Huang</b>, Wren Wood, Hriday Chhabria, Dhruv Jain
+                  </div>
+                  <div>CHI 2024</div>
+                  <div>
+                    <a href="./files/chi24_hacs.pdf">PDF</a
+                    >&nbsp;&middot;&nbsp;<a href="https://dl.acm.org/doi/10.1145/3613904.3642062">ACM DL</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!--SW Field Study Paper-->
+              <div class="row paper-row" id="2023">
+                <div class="col-md-3 col-xs-4">
+                  <a href="papers/ASSETS23-SWFieldStudy.pdf"
+                    ><img
+                      class="paperimage img img-fluid"
+                      src="files/soundwatch-field.jpeg"
+                      alt="A picture of a smartwatch screen with sound notification saying 'Car Honk'"
+                  /></a>
+                </div>
+                <div class="col-md-9 col-xs-8">
+                  <div>
+                    <a class="paper-title" href="papers/ASSETS23-SWFieldStudy.pdf"
+                      >Not There Yet: Feasibility and Challenges of Mobile Sound
+                      Recognition Systems</a
+                    >
+                  </div>
+                  <div>
+                    <b>Jeremy Zhengqi Huang</b>, Hriday Chhabria, Dhruv Jain
+                  </div>
+                  <div><span class='label label-award'>Honorable Mention</span>ASSETS 2023</div>
+                  <div>
+                    <a href="papers/ASSETS23-SWFieldStudy.pdf">PDF</a
+                    >&nbsp;&middot;&nbsp;<a href="https://dl.acm.org/doi/abs/10.1145/3597638.3608431">ACM DL</a
+                    >&nbsp;&middot;&nbsp;<a href="https://youtu.be/JL7xvsFC9P0"
+                      >Video</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!--AdaptiveSound Paper-->
+              <div class="row paper-row" id="2023">
+                <div class="col-md-3 col-xs-4">
+                  <a href="papers/ASSETS23-AdaptiveSound.pdf"
+                    ><img
+                      class="paperimage img img-fluid"
+                      src="files/adaptivesound.png"
+                      alt="A picture of the AdaptiveSound interface that shows (1) water running sound predictions, (2) green thumbs up and red thumbs down buttons, and (3) dialog box to provide feedback to the sound with surety measures"
+                  /></a>
+                </div>
+                <div class="col-md-9 col-xs-8">
+                  <div>
+                    <a class="paper-title" href="papers/ASSETS23-AdaptiveSound.pdf"
+                      >AdaptiveSound: An Interactive Feedback-Loop System to
+                      Improve Sound Recognition for Deaf and Hard of Hearing
+                      Users</a
+                    >
+                  </div>
+                  <div>
+                    Hang Do, Quan Dang, <b>Jeremy Zhengqi Huang</b>, Dhruv Jain
+                  </div>
+                  <div>ASSETS 2023</div>
+                  <div>
+                    <a href="papers/ASSETS23-AdaptiveSound.pdf">PDF</a
+                    >&nbsp;&middot;&nbsp;<a href="https://dl.acm.org/doi/abs/10.1145/3597638.3608390">ACM DL</a
+                    >&nbsp;&middot;&nbsp;<a href="https://youtu.be/JL7xvsFC9P0"
+                      >Video</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Main Content Body-->
+
+        <!--Side Bar-->
+        <div class="col-md-3">
+          <div class="vital-info" style="margin-top: 0">
+            <div><b>PhD Student</b></div>
+            <div>
+              <a href="https://cse.engin.umich.edu"
+                >Computer Science & Engineering</a
+              >
+            </div>
+            <div>
+              <a href="https://www.engin.umich.edu">College of Engineering</a>
+            </div>
+            <div><a href="https://umich.edu">University of Michigan</a></div>
+          </div>
+
+          <hr />
+
+          <div class="vital-info">
+            <div><a href="files/Huang_CV_Mar17.pdf">Curriculum Vitae</a></div>
+            <div><a href="https://scholar.google.com/citations?user=tYjsMXYAAAAJ&hl=en">Google Scholar</a></div>
+            <div>
+              <b>Email: </b
+              ><a href="mailto: zjhuang@umich.edu">zjhuang@umich.edu</a>
+            </div>
+            <div>
+              <b>Twitter/X: </b>
+              <a href="https://twitter.com/jzh2o">@jzh2o</a>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="vital-info">
+            <h1>Attending</h1>
+            <div>
+              <div class="row">
+                <div class="data col-md-6">5/11, 2024</div>
+                <div class="col-md-6">
+                  <a href="https://chi2024.acm.org">CHI 2024</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="data col-md-6">3/22, 2024</div>
+                <div class="col-md-6">
+                  <a href="https://sessions.studentlife.umich.edu/track/11165">Disability Visibility in Engineering Symposium</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="data col-md-6">10/17, 2023</div>
+                <div class="col-md-6">
+                  <a href="https://assets23.sigaccess.org/">AI Symposium</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="data col-md-6">10/22-25, 2023</div>
+                <div class="col-md-6">
+                  <a href="https://assets23.sigaccess.org/">ASSETS 2023</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-9">
+            <img
+              src="files/jeremyhuang.jpg"
+              class="img-responsive"
+              style="margin-bottom: 10px"
+              alt="Jeremy Huang wearing a brown trucker shirt."
+            />
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-9">
+            <p>
+              I am a visiting scholar at the University of Michigan Computer
+              Science and Engineering. My research interest lies at the
+              intersection of Human-Computer Interaction and Accessibility. I
+              am part of the Accessibility Lab advised by Dhruv Jain.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </body>
+</html>

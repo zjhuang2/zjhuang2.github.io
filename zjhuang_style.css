@@ -1,0 +1,178 @@
+@media only screen and (min-width: 768px) {
+  html,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: "Helvetica", "inter-variable", "neue-haas-grotesk-text", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+  }
+}
+
+body {
+  font-size: 18px;
+  font-family: "Helvetica","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+a,
+a:hover {
+  color: #0E7AFE;
+  text-decoration: none;
+  /* CMU Red: #bb00000 */
+  /* Michigan Maize: #FFCB05 */
+  /* Michigan Blue: #00274C */
+  /* Michigan Tappan Red: #9A3324 */
+}
+
+p {
+  margin: 0 0 1em;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: x-large;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-variation-settings: "slnt" 0, "wght" 500;
+}
+
+/* bootstrap properties */
+#topbar {
+  background-color: #333333;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+  border-color: #008dda;
+  margin-bottom: 2%;
+}
+
+#topbar .navbar-brand {
+  color: #FA862D;
+  font-size: 2.3em;
+  /*font-family: 'Open Sans',Helvetica,sans-serif;*/
+  font-weight: 600;
+  /*text-transform: uppercase;*/
+}
+
+#topbar .navbar-brand p {
+  display: inline;
+  font-family: "Kai Ti";
+}
+
+#topbar .navbar-brand a {
+  color: #eaf4fc;
+  font-weight: 200;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+#topbar .navbar-brand a:hover {
+  color: #FA862D;
+  text-decoration: none;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+  line-height: 0.8em;
+  height: 1em;
+  padding-top: 0;
+}
+
+.label {
+  font-weight: normal;
+  padding-left: 0.8%;
+  padding-right: 0.8%;
+  padding-top: 0.3%;
+  padding-bottom: 0.3%;
+  border-radius: 5px;
+  background-color: #FF3030;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.label-award {
+  margin-right: 5px;
+  color: #eaf6de;
+  border-radius: 20
+}
+
+.paperimage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.papers .paper-row {
+  margin-bottom: 2em;
+  vertical-align: top;
+  padding-left: 0px;
+  font-size: 18px;
+}
+
+.paper-title {
+  font-weight: 400;
+}
+
+.vital-info {
+  margin-top: 1em;
+  font-size: 16px;
+}
+
+.vital-info h4 {
+  margin-bottom: 5px;
+}
+
+.vital-info h5 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.olddate,
+.olddate a {
+  color: #aaaaaa;
+}
+
+.bio {
+  margin-top: 18px;
+}
+
+.btn-link {
+  padding: 2em 0px 2em 0px;
+  color: #bb0000;
+}
+
+.attribution {
+  font-size: smaller;
+  color: black;
+}
+
+.attribution a {
+  color: black;
+}
+
+.peopleicon {
+  height: 2.2em;
+  width: 2.2em;
+  margin: -6px 4px 10px 4px;
+  object-fit: cover;
+  /*filter: grayscale(70%);*/
+}
+
+.people div:last-child {
+  margin-bottom: -12px;
+}
+
+.newsItem {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+img {
+  border-radius: 20px;
+}
