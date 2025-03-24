@@ -4,7 +4,7 @@
   input,
   select,
   textarea {
-    font-family: "Lato", "inter-variable", "neue-haas-grotesk-text", sans-serif;
+    font-family: "Helvetica", "Lato", "inter-variable", "neue-haas-grotesk-text", sans-serif;
     font-style: normal;
     font-weight: 400;
   }
@@ -12,16 +12,16 @@
 
 body {
   font-size: 18px;
-  font-family: "Lato","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
+  font-family: "Helvetica", "Lato","inter-variable", 'neue-haas-grotesk-text', arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 a,
 a:hover {
-  color: #dd1c1a;
+  color: #007AFF;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 300;
   /* CMU Red: #bb00000 */
   /* Michigan Maize: #FFCB05 */
   /* Michigan Blue: #00274C */
@@ -45,7 +45,7 @@ h1 {
 
 /* bootstrap properties */
 #topbar {
-  background-color: #ffb703;
+  background-color: #e9ecef;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
@@ -67,10 +67,10 @@ h1 {
 }
 
 #topbar .navbar-brand a {
-  color: #023047;
-  font-weight: 600;
+  color: #343a40;
+  font-weight: 400;
   text-decoration: none;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 #topbar .navbar-brand a:hover {
@@ -92,7 +92,7 @@ h1 {
   padding-top: 0.3%;
   padding-bottom: 0.3%;
   border-radius: 5px;
-  background-color: #0ead69;
+  background-color: #bb0000;
   font-size: 16px;
   font-weight: 300;
 }
@@ -116,8 +116,8 @@ h1 {
 }
 
 .paper-title {
-  font-weight: 600;
-  color: #2d3142;
+  font-weight: 300;
+  color: #007AFF;
 }
 
 .vital-info {
