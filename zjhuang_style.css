@@ -145,6 +145,8 @@ h1:before {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .papers .paper-row:hover {
@@ -152,16 +154,27 @@ h1:before {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
+.papers .paper-row img {
+  border-radius: 8px;
+  box-shadow: none;
+  transition: none;
+}
+
+.papers .paper-row img:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .paper-title {
   font-weight: 600;
-  color: #c96640;
+  color: #3988ba;
   font-size: 18px;
   line-height: 1.4;
   transition: color 0.3s ease;
 }
 
 .paper-title:hover {
-  color: #b44c26;
+  color: #2a70a2;
 }
 
 .vital-info {
@@ -232,12 +245,14 @@ h1:before {
   margin-top: 10px;
   margin-bottom: 15px;
   font-size: 16px;
-  padding: 15px 20px;
+  padding: 20px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   border: none;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .newsItem:hover {
@@ -262,6 +277,12 @@ img {
 img:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Override for profile image only */
+.img-fluid:not(.paperimage) {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Add gradient background accents */
