@@ -48,20 +48,6 @@ h1 {
   margin-top: 15px;
   color: #1a202c;
   letter-spacing: -0.02em;
-  position: relative;
-  padding-left: 15px;
-}
-
-h1:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 70%;
-  background: linear-gradient(135deg, #c96640 0%, #3988ba 100%);
-  border-radius: 2px;
 }
 
 /* bootstrap properties */
@@ -70,10 +56,9 @@ h1:before {
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-bottom: none;
+  border-bottom: 1px solid #e0e0e0;
   margin-bottom: 3%;
   padding: 25px 0;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 #topbar .navbar-brand {
@@ -143,26 +128,25 @@ h1:before {
   font-size: 17px;
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
   margin-left: 0;
   margin-right: 0;
 }
 
 .papers .paper-row:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #d0d0d0;
 }
 
 .papers .paper-row img {
   border-radius: 8px;
-  box-shadow: none;
+  border: 1px solid #f0f0f0;
   transition: none;
 }
 
 .papers .paper-row img:hover {
   transform: none;
-  box-shadow: none;
+  border-color: #e0e0e0;
 }
 
 .paper-title {
@@ -184,7 +168,7 @@ h1:before {
   background: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e0e0;
 }
 
 .vital-info a {
@@ -242,22 +226,19 @@ h1:before {
 }
 
 .newsItem {
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 8px;
+  margin-bottom: 10px;
   font-size: 16px;
-  padding: 20px;
+  padding: 12px 15px;
   background: #ffffff;
   border-radius: 16px;
-  border: none;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   margin-left: 0;
   margin-right: 0;
 }
 
 .newsItem:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+  background: #fafafa;
 }
 
 .newsItem .date {
@@ -270,19 +251,18 @@ h1:before {
 
 img {
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
   transition: all 0.3s ease;
 }
 
 img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-color: #e0e0e0;
 }
 
 /* Override for profile image only */
 .img-fluid:not(.paperimage) {
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
 }
 
 /* Add gradient background accents */
