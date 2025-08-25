@@ -47,10 +47,14 @@
       class="navbar navbar-inverse navbar-static-top"
       role="navigation"
     >
-      <div class="container">
+      <div class="container" style="position: relative;">
         <div class="navbar-brand">
           <a href="." target="_self">Jeremy Zhengqi Huang</a>
         </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+          <span>Dark</span>
+        </button>
       </div>
     </div>
 
@@ -485,5 +489,70 @@
         </div>
       </div>
     </div> -->
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = themeToggle.querySelector('.theme-icon');
+      const themeText = themeToggle.querySelector('span:not(.theme-icon)');
+      
+      // Check for saved theme preference or default to system preference
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      // Set initial theme
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateToggleButton(savedTheme === 'dark');
+      } else if (systemPrefersDark) {
+        // System prefers dark but no saved preference
+        updateToggleButton(true);
+      } else {
+        updateToggleButton(false);
+      }
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const isDark = currentTheme === 'dark' || 
+                      (!currentTheme && systemPrefersDark);
+        const newTheme = isDark ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleButton(newTheme === 'dark');
+      });
+      
+      // Update toggle button appearance
+      function updateToggleButton(isDark) {
+        if (isDark) {
+          themeIcon.textContent = '☀️';
+          themeText.textContent = 'Light';
+        } else {
+          themeIcon.textContent = '🌙';
+          themeText.textContent = 'Dark';
+        }
+      }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Only apply system preference if user hasn't manually set a theme
+        if (!localStorage.getItem('theme')) {
+          updateToggleButton(e.matches);
+        }
+      });
+      
+      // Limit news items to top 5
+      document.addEventListener('DOMContentLoaded', function() {
+        const newsItems = document.querySelectorAll('.newsItem');
+        const maxNewsItems = 5;
+        
+        newsItems.forEach((item, index) => {
+          if (index >= maxNewsItems) {
+            item.style.display = 'none';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
