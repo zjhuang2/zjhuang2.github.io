@@ -263,6 +263,10 @@ p {
   padding-top: 0;
 }
 
+#about p {
+  font-size: 1.1rem;
+}
+
 #about p strong {
   color: var(--accent-color);
   font-weight: 700;
