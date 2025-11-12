@@ -9,13 +9,17 @@
   --secondary-color: #2b2b2b;
   --accent-color: #007BA7;
   --accent-hover: #00698F;
+  /* University of Michigan palette */
+  --um-blue: #00274C;   /* Michigan Blue */
+  --um-maize: #FFCB05;  /* Michigan Maize */
   --text-color: #3a3a3a;
+  --content-text-color: #555555; /* more gray for main content */
   --text-light: #6a6a6a;
   --background: #ffffff;
   --background-alt: #f8f9fa;
   --panel-bg: #f6f6f6;
   --border-color: #e9ecef;
-  --max-width: 1400px;
+  --max-width: 1450px; /* slightly wider content area */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.10);
   --shadow-lg: 0 6px 18px rgba(0, 0, 0, 0.12);
@@ -29,12 +33,12 @@
 }
 
 body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif;
   line-height: 1.55;
   color: var(--text-color);
   background-color: var(--background);
-  font-weight: 300;
+  font-weight: 400; /* Regular weight for body text */
 }
 
 /* Typography */
@@ -48,8 +52,8 @@ nav {
   position: sticky;
   top: 0;
   z-index: 150;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--background);
+  border-bottom: 0;
+  background: var(--um-blue);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   overflow: hidden;
@@ -65,9 +69,9 @@ nav::before {
 }
 
 nav.scrolled {
-  background: var(--background);
+  background: var(--um-blue);
   box-shadow: var(--elev-2);
-  border-bottom-color: var(--border-color);
+  border-bottom-color: transparent;
 }
 
 .nav-container {
@@ -87,8 +91,8 @@ nav.scrolled {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-color);
-  font-size: 0.9rem;
+  color: var(--um-maize);
+  font-size: 1.05rem; /* larger navbar items */
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
@@ -100,11 +104,11 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-  color: var(--accent-color);
+  color: #ffffff;
 }
 
 .nav-links a.active {
-  color: var(--accent-color);
+  color: #ffffff;
 }
 
 /* Main Layout Container */
@@ -112,7 +116,7 @@ nav.scrolled {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 240px 1fr;
   gap: 2rem;
   padding: 2rem 1.5rem;
   align-items: start;
@@ -148,7 +152,7 @@ nav.scrolled {
 
 .sidebar h1 {
   font-size: 1.25rem;
-  font-weight: 500; /* Roboto Medium */
+  font-weight: 700; /* Heading bolder */
   color: var(--primary-color);
   margin-bottom: 0.35rem;
   letter-spacing: -1px;
@@ -157,7 +161,7 @@ nav.scrolled {
 
 .sidebar .title {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--accent-color);
   margin-bottom: 0.35rem;
   letter-spacing: 0.3px;
@@ -167,7 +171,7 @@ nav.scrolled {
   font-size: 0.9rem;
   color: var(--text-light);
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
 }
 
@@ -186,7 +190,7 @@ nav.scrolled {
   border: none;
   border-radius: 0;
   transition: color 0.2s ease;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.9rem;
   text-align: left;
   display: block;
@@ -213,6 +217,7 @@ nav.scrolled {
 .content {
   padding-left: 1rem;
   border-left: none;
+  color: var(--content-text-color);
 }
 
 section {
@@ -253,6 +258,11 @@ p {
   color: var(--text-color);
 }
 
+/* Use a slightly grayer tone for content paragraphs */
+.content p {
+  color: var(--content-text-color);
+}
+
 /* General content links (avoid default blue) */
 .content a:not(.research-chip) {
   color: var(--accent-color);
@@ -269,8 +279,8 @@ p {
 .content h3 {
   color: var(--text-color);
   border-bottom: 1px solid var(--border-color);
-  font-family: "Raleway", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700; /* Headings bolder */
 }
 
 .content h2 {
@@ -292,7 +302,7 @@ p {
 
 #about p strong {
   color: var(--text-color);
-  font-weight: 500; /* Roboto Medium */
+  font-weight: 700; /* Stronger emphasis */
   /* Hand-drawn-like marker highlight using background */
   background-image: linear-gradient(180deg, transparent 50%, var(--hl-ink) 50%, var(--hl-ink-dark) 100%);
   background-repeat: no-repeat;
@@ -302,6 +312,11 @@ p {
   box-decoration-break: clone;
   padding: 0 0.1em;
   border-radius: 5px;
+}
+
+/* Make all bold/strong text appear bolder */
+strong, b {
+  font-weight: 700;
 }
 
 /* Minimal research bullets */
@@ -317,11 +332,11 @@ p {
 }
 
 .research-bullets .rb-title {
-  font-weight: 500; /* Roboto Medium */
+  font-weight: 700; /* Bold for emphasis */
 }
 
 .research-bullets .rb-desc {
-  font-weight: 300; /* Roboto Light */
+  font-weight: 400; /* Regular body text */
 }
 
 /* (rolled back) plain research lists removed */
@@ -448,31 +463,29 @@ p {
 
 .news-item p {
   margin: 0;
-  color: var(--text-color);
+  color: var(--content-text-color);
   line-height: 1.55;
 }
 
 /* Publications */
 .publication {
-  margin-bottom: 0;
-  padding: 0.35rem 0;
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
+  margin-bottom: 0.8rem;
+  padding: 0.95rem 1rem;
+  background-color: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color); /* thin light gray outline */
   box-shadow: none;
   transition: none;
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 0.6rem;
+  gap: 1.2rem; /* more space between thumbnail and text */
   align-items: center;
   scroll-margin-top: 130px;
-  font-weight: 300;
+  font-weight: 400; /* Regular text */
 }
 
 .publication + .publication {
-  border-top: 1px solid var(--border-color);
-  margin-top: 0.8rem;
-  padding-top: 0.8rem;
+  margin-top: 0.8rem; /* spacing between containers */
 }
 
 .publication:hover {
@@ -483,8 +496,8 @@ p {
 .pub-thumbnail {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: none;
-  background: transparent;
+  box-shadow: var(--elev-2); /* add drop shadow */
+  background: var(--background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -503,15 +516,15 @@ p {
 .pub-content {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.25rem; /* increase vertical spacing between title/authors/venue */
   align-self: start;
 }
 
 .pub-title {
-  font-weight: 400;
+  font-weight: 700; /* bold publication title */
   font-size: 1.05rem;
-  color: var(--primary-color);
-  margin-bottom: 0.08rem;
+  color: var(--content-text-color);
+  margin-bottom: 0.2rem; /* a bit more separation from authors */
   line-height: 1.35;
 }
 
@@ -519,7 +532,7 @@ p {
   font-size: 0.95rem;
   color: var(--text-light);
   margin-bottom: 0.05rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.3;
 }
 
@@ -529,7 +542,7 @@ p {
   color: var(--text-light);
   margin-top: 0.12rem;
   margin-bottom: 0.08rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
 }
 
@@ -613,7 +626,7 @@ p {
 }
 
 .project-description {
-  color: var(--text-color);
+  color: var(--content-text-color);
   line-height: 1.8;
   padding-left: 1.5rem;
 }
@@ -733,8 +746,8 @@ footer {
 
   /* Mobile navigation */
   .mobile-nav {
-    background-color: var(--background);
-    border-bottom: 2px solid var(--border-color);
+    background-color: var(--um-blue);
+    border-bottom: 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -751,19 +764,20 @@ footer {
   .mobile-nav-name {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--um-maize);
     text-decoration: none;
   }
 
   .mobile-nav-toggle {
     display: block;
+    color: var(--um-maize);
   }
 
   .mobile-nav-links {
     display: none;
     list-style: none;
     padding: 1rem 2rem;
-    background: var(--background-alt);
+    background: var(--um-blue);
   }
 
   .mobile-nav-links.active {
@@ -773,13 +787,14 @@ footer {
   .mobile-nav-links a {
     display: block;
     padding: 0.5rem 0;
-    color: var(--text-color);
+    color: var(--um-maize);
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.05rem;
   }
 
   .mobile-nav-links a.active {
-    color: var(--accent-color);
+    color: #ffffff;
   }
 
   /* Adjust sidebar for mobile */
@@ -821,7 +836,7 @@ footer {
   .pub-thumbnail {
     width: 100%;
     max-width: 420px;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.2rem; /* more space below thumbnail on mobile */
   }
 
   .pub-thumbnail img {
