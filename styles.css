@@ -33,7 +33,7 @@
 }
 
 body {
-  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Helvetica, Arial, sans-serif;
   line-height: 1.55;
   color: var(--text-color);
@@ -152,7 +152,7 @@ nav.scrolled {
 
 .sidebar h1 {
   font-size: 1.25rem;
-  font-weight: 700; /* Heading bolder */
+  font-weight: 600; /* Heading weight */
   color: var(--primary-color);
   margin-bottom: 0.35rem;
   letter-spacing: -1px;
@@ -238,7 +238,7 @@ section {
 
 h2 {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 1.2rem;
   letter-spacing: -0.5px;
@@ -246,7 +246,7 @@ h2 {
 
 h3 {
   font-size: 1.0rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 0.6rem;
   letter-spacing: -0.3px;
@@ -279,8 +279,8 @@ p {
 .content h3 {
   color: var(--text-color);
   border-bottom: 1px solid var(--border-color);
-  font-family: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-weight: 700; /* Headings bolder */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 600; /* Headings weight */
 }
 
 .content h2 {
@@ -302,7 +302,7 @@ p {
 
 #about p strong {
   color: var(--text-color);
-  font-weight: 700; /* Stronger emphasis */
+  font-weight: 600; /* Emphasis at 600 */
   /* Hand-drawn-like marker highlight using background */
   background-image: linear-gradient(180deg, transparent 50%, var(--hl-ink) 50%, var(--hl-ink-dark) 100%);
   background-repeat: no-repeat;
@@ -314,9 +314,9 @@ p {
   border-radius: 5px;
 }
 
-/* Make all bold/strong text appear bolder */
+/* Make all bold/strong text at 600 */
 strong, b {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Minimal research bullets */
