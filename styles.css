@@ -116,7 +116,7 @@ nav.scrolled {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 250px 1fr;
   gap: 2rem;
   padding: 2rem 1.5rem;
   align-items: start;
