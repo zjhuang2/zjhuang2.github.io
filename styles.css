@@ -475,7 +475,7 @@ strong, b {
   border-radius: 8px;
   border: 1px solid var(--border-color); /* thin light gray outline */
   box-shadow: none;
-  transition: none;
+  transition: background-color 0.25s ease; /* smooth hover fade */
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 1.2rem; /* more space between thumbnail and text */
@@ -491,6 +491,7 @@ strong, b {
 .publication:hover {
   transform: none;
   box-shadow: none;
+  background-color: var(--background-alt); /* subtle light gray on hover */
 }
 
 .pub-thumbnail {
