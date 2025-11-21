@@ -303,15 +303,14 @@ p {
 #about p strong {
   color: var(--text-color);
   font-weight: 600; /* Emphasis at 600 */
-  /* Hand-drawn-like marker highlight using background */
-  background-image: linear-gradient(180deg, transparent 50%, var(--hl-ink) 50%, var(--hl-ink-dark) 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0.75em;
-  background-position: 0 92%;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  padding: 0 0.1em;
-  border-radius: 5px;
+}
+
+#about p strong.soft-accent-1 {
+  color: #008B8B;
+}
+
+#about p strong.soft-accent-2 {
+  color: #CC5500;
 }
 
 /* Make all bold/strong text at 600 */

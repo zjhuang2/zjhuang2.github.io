@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeremy Zhengqi Huang · Human-Centered AI & Accessibility</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeremy Zhengqi Huang · Human-Centered AI & Accessibility</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <body>
+    <!-- Desktop Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="paper/Huang_CV.pdf">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<body>
-  <!-- Desktop Navigation -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <ul class="nav-links">
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <div class="mobile-nav-container">
+        <a href="#" class="mobile-nav-name">Jeremy Zhengqi Huang</a>
+        <button class="mobile-nav-toggle" id="mobile-menu-toggle">☰</button>
+      </div>
+      <ul class="mobile-nav-links" id="mobile-menu">
         <li><a href="#about">About</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#publications">Publications</a></li>
@@ -23,46 +41,36 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-  </nav>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav">
-    <div class="mobile-nav-container">
-      <a href="#" class="mobile-nav-name">Jeremy Zhengqi Huang</a>
-      <button class="mobile-nav-toggle" id="mobile-menu-toggle">☰</button>
-    </div>
-    <ul class="mobile-nav-links" id="mobile-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="paper/Huang_CV.pdf">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- Main Container with Two Columns -->
-  <div class="main-container">
-    <!-- Left Column - Sidebar -->
-    <aside class="sidebar">
-      <div class="profile-section">
-        <img src="images/portrait.jpeg" alt="Portrait of Jeremy Zhengqi Huang" class="hero-image" />
-        <h1>Jeremy Z. Huang</h1>
-        <div class="title">Human-AI Interaction & Accessibility</div>
-        <div class="institution">
-          Computer Science & Engineering<br />University of Michigan
+    <!-- Main Container with Two Columns -->
+    <div class="main-container">
+      <!-- Left Column - Sidebar -->
+      <aside class="sidebar">
+        <div class="profile-section">
+          <img
+            src="images/portrait.jpeg"
+            alt="Portrait of Jeremy Zhengqi Huang"
+            class="hero-image"
+          />
+          <h1>Jeremy Z. Huang</h1>
+          <div class="title">Human-AI Interaction & Accessibility</div>
+          <div class="institution">
+            Computer Science & Engineering<br />University of Michigan
+          </div>
         </div>
-      </div>
 
-      <div class="sidebar-contact">
-        <a href="mailto:zjhuang@umich.edu">Email</a>
-        <a href="paper/Huang_CV.pdf">Curriculum Vitae</a>
-        <a href="https://scholar.google.com/citations?user=tYjsMXYAAAAJ&hl=en">Google Scholar</a>
-        <a href="https://soundability.eecs.umich.edu/">Soundability Lab</a>
-        <a href="https://github.com/zjhuang2">GitHub</a>
-        <a href="https://twitter.com/jzh2o">X: @jzh2o</a>
-      </div>
+        <div class="sidebar-contact">
+          <a href="mailto:zjhuang@umich.edu">Email</a>
+          <a href="paper/Huang_CV.pdf">Curriculum Vitae</a>
+          <a href="https://scholar.google.com/citations?user=tYjsMXYAAAAJ&hl=en"
+            >Google Scholar</a
+          >
+          <a href="https://soundability.eecs.umich.edu/">Soundability Lab</a>
+          <a href="https://github.com/zjhuang2">GitHub</a>
+          <a href="https://twitter.com/jzh2o">X: @jzh2o</a>
+        </div>
 
-      <!-- <div class="sidebar-bio">
+        <!-- <div class="sidebar-bio">
           <p>
             I design and study human-AI systems that help people with
             disabilities personalize sound and media so they can access
@@ -74,219 +82,293 @@
             <a href="https://web.eecs.umich.edu/~profdj/">Prof. Dhruv Jain</a>
           </p>
         </div> -->
-    </aside>
+      </aside>
 
-    <!-- Right Column - Main Content -->
-    <main class="content">
-      <!-- About Section -->
-      <section id="about">
-        <p>
-          Hi!👋 I am a Human-Computer Interaction researcher and second-year
-          Ph.D. student in Computer Science & Engineering at the University of
-          Michigan, where I work with
-          <a href="https://web.eecs.umich.edu/~profdj/">Prof. Dhruv Jain</a>
-          in the
-          <a href="https://soundability.eecs.umich.edu/">Soundability Lab</a>.
-        </p>
-        <p>
-          Before starting my Ph.D., I completed an M.S. in Human-Computer
-          Interaction at the University of Michigan School of Information and
-          a B.S. in Data Science and Psychology at The Ohio State University.
-        </p>
-        <p>
-          My research develops human–AI systems that empower DHH and neurodivergent people to personalize their
-          experience of everyday sound. I achieve this through <strong>adaptive sound processing</strong> in media and
-          real-world environments, and by <strong>providing support for making sense of complex auditory
-            scenes</strong>.
-        </p>
-      </section>
+      <!-- Right Column - Main Content -->
+      <main class="content">
+        <!-- About Section -->
+        <section id="about">
+          <p>
+            Hi!👋 I am a Human-Computer Interaction researcher and second-year
+            Ph.D. student in Computer Science & Engineering at the University of
+            Michigan, where I work with
+            <a href="https://web.eecs.umich.edu/~profdj/">Prof. Dhruv Jain</a>
+            in the
+            <a href="https://soundability.eecs.umich.edu/">Soundability Lab</a>.
+          </p>
+          <p>
+            Before starting my Ph.D., I completed an M.S. in Human-Computer
+            Interaction at the University of Michigan School of Information and
+            a B.S. in Data Science and Psychology at The Ohio State University.
+          </p>
+          <p>
+            My research develops human–AI systems that empower DHH and
+            neurodivergent people to personalize their experience of everyday
+            sound. I achieve this through
+            <strong class="soft-accent-1">adaptive audio processing</strong> in
+            media and real-world environments, and by
+            <strong class="soft-accent-2"
+              >providing support for making sense of complex auditory
+              scenes</strong
+            >.
+          </p>
+        </section>
 
-      <!-- News Section -->
-      <section id="news">
-        <h2>Recent News</h2>
-        <div class="news-list">
-          <article class="news-item">
-            <div class="news-date">Aug 12, 2025</div>
-            <p>
-              Our work on transforming non-speech captions with anchored
-              generative models is headed to <strong>ASSETS 2025</strong> in
-              Denver!
-            </p>
-          </article>
-          <article class="news-item">
-            <div class="news-date">Apr 28, 2025</div>
-            <p>
-              I will present <em>SoundWeaver</em> at
-              <strong>CHI 2025</strong> in Yokohama, sharing how we support
-              real-time sensemaking of auditory environments.
-            </p>
-          </article>
-          <article class="news-item">
-            <div class="news-date">Mar 14, 2024</div>
-            <p>
-              Our Human-AI Collaborative Sound Awareness (HACS) paper was
-              accepted to <strong>CHI 2024</strong>!
-            </p>
-          </article>
-          <article class="news-item">
-            <div class="news-date">Mar 1, 2024</div>
-            <p>
-              Thrilled to continue my Ph.D. journey at Michigan CSE and keep
-              building accessible technologies with the Soundability Lab.
-            </p>
-          </article>
-          <article class="news-item">
-            <div class="news-date">Jun 30, 2023</div>
-            <p>
-              Our field study of mobile sound recognition systems received an
-              <strong>Honorable Mention</strong> at ASSETS 2023.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Publications Section -->
-      <section id="publications">
-        <h2>Publications</h2>
-
-        <div class="publication" id="captune">
-          <div class="pub-thumbnail">
-            <img src="images/captune.png" alt="Illustration of the CapTune caption personalisation interface" />
+        <!-- News Section -->
+        <section id="news">
+          <h2>Recent News</h2>
+          <div class="news-list">
+            <article class="news-item">
+              <div class="news-date">Aug 12, 2025</div>
+              <p>
+                Our work on transforming non-speech captions with anchored
+                generative models is headed to <strong>ASSETS 2025</strong> in
+                Denver!
+              </p>
+            </article>
+            <article class="news-item">
+              <div class="news-date">Apr 28, 2025</div>
+              <p>
+                I will present <em>SoundWeaver</em> at
+                <strong>CHI 2025</strong> in Yokohama, sharing how we support
+                real-time sensemaking of auditory environments.
+              </p>
+            </article>
+            <article class="news-item">
+              <div class="news-date">Mar 14, 2024</div>
+              <p>
+                Our Human-AI Collaborative Sound Awareness (HACS) paper was
+                accepted to <strong>CHI 2024</strong>!
+              </p>
+            </article>
+            <article class="news-item">
+              <div class="news-date">Mar 1, 2024</div>
+              <p>
+                Thrilled to continue my Ph.D. journey at Michigan CSE and keep
+                building accessible technologies with the Soundability Lab.
+              </p>
+            </article>
+            <article class="news-item">
+              <div class="news-date">Jun 30, 2023</div>
+              <p>
+                Our field study of mobile sound recognition systems received an
+                <strong>Honorable Mention</strong> at ASSETS 2023.
+              </p>
+            </article>
           </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              CapTune: Transforming Non-Speech Captions with Anchored
-              Generative Models
-            </div>
-            <div class="pub-authors">
-              <strong>Jeremy Zhengqi Huang</strong>, Caluã de Lacerda Pataca,
-              Liang-Yuan Wu, Dhruv Jain
-            </div>
-            <div class="pub-venue">ASSETS 2025</div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2508.19971" target="_blank" rel="noopener">Preprint</a>
+        </section>
 
-              <a href="https://zjhuang2.github.io/captune/" target="_blank" rel="noopener">Project Page</a>
+        <!-- Publications Section -->
+        <section id="publications">
+          <h2>Publications</h2>
 
-              <a href="https://youtu.be/X1BTCv0ZpKA?si=UmSrgX0PMumsk9jI" target="_blank" rel="noopener">Video</a>
+          <div class="publication" id="captune">
+            <div class="pub-thumbnail">
+              <img
+                src="images/captune.png"
+                alt="Illustration of the CapTune caption personalisation interface"
+              />
             </div>
-          </div>
-        </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                CapTune: Transforming Non-Speech Captions with Anchored
+                Generative Models
+              </div>
+              <div class="pub-authors">
+                <strong>Jeremy Zhengqi Huang</strong>, Caluã de Lacerda Pataca,
+                Liang-Yuan Wu, Dhruv Jain
+              </div>
+              <div class="pub-venue">ASSETS 2025</div>
+              <div class="pub-links">
+                <a
+                  href="https://arxiv.org/abs/2508.19971"
+                  target="_blank"
+                  rel="noopener"
+                  >Preprint</a
+                >
 
-        <div class="publication" id="soundweaver">
-          <div class="pub-thumbnail">
-            <img src="images/soundweaver.png" alt="Concept art for the SoundWeaver auditory sensemaking system" />
-          </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Weaving Sound Information to Support Real-time Sensemaking of
-              Auditory Environments
-            </div>
-            <div class="pub-authors">
-              <strong>Jeremy Zhengqi Huang</strong>, Jaylin Herskovitz,
-              Liang-Yuan Wu, Cecily Morrison, Dhruv Jain
-            </div>
-            <div class="pub-venue">CHI 2025</div>
-            <div class="pub-links">
-              <a href="paper/chi25-soundweaver.pdf" target="_blank">PDF</a>
-              <a href="https://dl.acm.org/doi/full/10.1145/3706598.3714268" target="_blank" rel="noopener">ACM DL</a>
-            </div>
-          </div>
-        </div>
+                <a
+                  href="https://zjhuang2.github.io/captune/"
+                  target="_blank"
+                  rel="noopener"
+                  >Project Page</a
+                >
 
-        <div class="publication" id="masksound">
-          <div class="pub-thumbnail">
-            <img src="images/masksound.png"
-              alt="Prototype of a sound masking interface supporting autistic listeners" />
-          </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Exploring Sound Masking Approaches to Support People with Autism
-              in Managing Noise Sensitivity
-            </div>
-            <div class="pub-authors">
-              Anna Y. Park, Andy Jin, <strong>Jeremy Zhengqi Huang</strong>,
-              Jesse Carr, Dhruv Jain
-            </div>
-            <div class="pub-venue">ASSETS 2024</div>
-            <div class="pub-links">
-              <a href="https://dl.acm.org/doi/10.1145/3663548.3675656" target="_blank" rel="noopener">ACM DL</a>
+                <a
+                  href="https://youtu.be/X1BTCv0ZpKA?si=UmSrgX0PMumsk9jI"
+                  target="_blank"
+                  rel="noopener"
+                  >Video</a
+                >
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="publication">
-          <div class="pub-thumbnail">
-            <img src="images/human-ai-collab.png"
-              alt="Diagram describing the Human-AI Collaborative Sound Awareness workflow" />
+          <div class="publication" id="soundweaver">
+            <div class="pub-thumbnail">
+              <img
+                src="images/soundweaver.png"
+                alt="Concept art for the SoundWeaver auditory sensemaking system"
+              />
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                Weaving Sound Information to Support Real-time Sensemaking of
+                Auditory Environments
+              </div>
+              <div class="pub-authors">
+                <strong>Jeremy Zhengqi Huang</strong>, Jaylin Herskovitz,
+                Liang-Yuan Wu, Cecily Morrison, Dhruv Jain
+              </div>
+              <div class="pub-venue">CHI 2025</div>
+              <div class="pub-links">
+                <a href="paper/chi25-soundweaver.pdf" target="_blank">PDF</a>
+                <a
+                  href="https://dl.acm.org/doi/full/10.1145/3706598.3714268"
+                  target="_blank"
+                  rel="noopener"
+                  >ACM DL</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              A Human-AI Collaborative Approach for Designing Sound Awareness
-              Systems
-            </div>
-            <div class="pub-authors">
-              <strong>Jeremy Zhengqi Huang</strong>, Wren Wood, Hriday
-              Chhabria, Dhruv Jain
-            </div>
-            <div class="pub-venue">CHI 2024</div>
-            <div class="pub-links">
-              <a href="paper/chi24_hacs.pdf" target="_blank">PDF</a>
-              <a href="https://dl.acm.org/doi/10.1145/3613904.3642062" target="_blank" rel="noopener">ACM DL</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="publication" id="not-there-yet">
-          <div class="pub-thumbnail">
-            <img src="images/not-there-yet.jpeg" alt="Smartwatch showing a detected car honk notification" />
+          <div class="publication" id="masksound">
+            <div class="pub-thumbnail">
+              <img
+                src="images/masksound.png"
+                alt="Prototype of a sound masking interface supporting autistic listeners"
+              />
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                Exploring Sound Masking Approaches to Support People with Autism
+                in Managing Noise Sensitivity
+              </div>
+              <div class="pub-authors">
+                Anna Y. Park, Andy Jin, <strong>Jeremy Zhengqi Huang</strong>,
+                Jesse Carr, Dhruv Jain
+              </div>
+              <div class="pub-venue">ASSETS 2024</div>
+              <div class="pub-links">
+                <a
+                  href="https://dl.acm.org/doi/10.1145/3663548.3675656"
+                  target="_blank"
+                  rel="noopener"
+                  >ACM DL</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              Not There Yet: Feasibility and Challenges of Mobile Sound
-              Recognition Systems
-            </div>
-            <div class="pub-authors">
-              <strong>Jeremy Zhengqi Huang</strong>, Hriday Chhabria, Dhruv
-              Jain
-            </div>
-            <div class="pub-venue">
-              ASSETS 2023 <span class="pub-award">Honorable Mention</span>
-            </div>
-            <div class="pub-links">
-              <a href="paper/ASSETS23-SWFieldStudy.pdf" target="_blank">PDF</a>
-              <a href="https://dl.acm.org/doi/abs/10.1145/3597638.3608431" target="_blank" rel="noopener">ACM DL</a>
-              <a href="https://youtu.be/JL7xvsFC9P0" target="_blank" rel="noopener">Video</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="publication" id="adaptivesound">
-          <div class="pub-thumbnail">
-            <img src="images/adaptivesound.png"
-              alt="AdaptiveSound interface showing sound predictions and feedback controls" />
+          <div class="publication">
+            <div class="pub-thumbnail">
+              <img
+                src="images/human-ai-collab.png"
+                alt="Diagram describing the Human-AI Collaborative Sound Awareness workflow"
+              />
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                A Human-AI Collaborative Approach for Designing Sound Awareness
+                Systems
+              </div>
+              <div class="pub-authors">
+                <strong>Jeremy Zhengqi Huang</strong>, Wren Wood, Hriday
+                Chhabria, Dhruv Jain
+              </div>
+              <div class="pub-venue">CHI 2024</div>
+              <div class="pub-links">
+                <a href="paper/chi24_hacs.pdf" target="_blank">PDF</a>
+                <a
+                  href="https://dl.acm.org/doi/10.1145/3613904.3642062"
+                  target="_blank"
+                  rel="noopener"
+                  >ACM DL</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="pub-content">
-            <div class="pub-title">
-              AdaptiveSound: An Interactive Feedback-Loop System to Improve
-              Sound Recognition for Deaf and Hard of Hearing Users
-            </div>
-            <div class="pub-authors">
-              Hang Do, Quan Dang, <strong>Jeremy Zhengqi Huang</strong>, Dhruv
-              Jain
-            </div>
-            <div class="pub-venue">ASSETS 2023</div>
-            <div class="pub-links">
-              <a href="paper/ASSETS23-AdaptiveSound.pdf" target="_blank">PDF</a>
-              <a href="https://dl.acm.org/doi/abs/10.1145/3597638.3608390" target="_blank" rel="noopener">ACM DL</a>
-              <a href="https://youtu.be/JL7xvsFC9P0" target="_blank" rel="noopener">Video</a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Projects Section -->
-      <!-- <section id="projects">
+          <div class="publication" id="not-there-yet">
+            <div class="pub-thumbnail">
+              <img
+                src="images/not-there-yet.jpeg"
+                alt="Smartwatch showing a detected car honk notification"
+              />
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                Not There Yet: Feasibility and Challenges of Mobile Sound
+                Recognition Systems
+              </div>
+              <div class="pub-authors">
+                <strong>Jeremy Zhengqi Huang</strong>, Hriday Chhabria, Dhruv
+                Jain
+              </div>
+              <div class="pub-venue">
+                ASSETS 2023 <span class="pub-award">Honorable Mention</span>
+              </div>
+              <div class="pub-links">
+                <a href="paper/ASSETS23-SWFieldStudy.pdf" target="_blank"
+                  >PDF</a
+                >
+                <a
+                  href="https://dl.acm.org/doi/abs/10.1145/3597638.3608431"
+                  target="_blank"
+                  rel="noopener"
+                  >ACM DL</a
+                >
+                <a
+                  href="https://youtu.be/JL7xvsFC9P0"
+                  target="_blank"
+                  rel="noopener"
+                  >Video</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="publication" id="adaptivesound">
+            <div class="pub-thumbnail">
+              <img
+                src="images/adaptivesound.png"
+                alt="AdaptiveSound interface showing sound predictions and feedback controls"
+              />
+            </div>
+            <div class="pub-content">
+              <div class="pub-title">
+                AdaptiveSound: An Interactive Feedback-Loop System to Improve
+                Sound Recognition for Deaf and Hard of Hearing Users
+              </div>
+              <div class="pub-authors">
+                Hang Do, Quan Dang, <strong>Jeremy Zhengqi Huang</strong>, Dhruv
+                Jain
+              </div>
+              <div class="pub-venue">ASSETS 2023</div>
+              <div class="pub-links">
+                <a href="paper/ASSETS23-AdaptiveSound.pdf" target="_blank"
+                  >PDF</a
+                >
+                <a
+                  href="https://dl.acm.org/doi/abs/10.1145/3597638.3608390"
+                  target="_blank"
+                  rel="noopener"
+                  >ACM DL</a
+                >
+                <a
+                  href="https://youtu.be/JL7xvsFC9P0"
+                  target="_blank"
+                  rel="noopener"
+                  >Video</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <!-- <section id="projects">
           <h2>Current Projects</h2>
 
           <div class="project">
@@ -333,8 +415,8 @@
           </div>
         </section> -->
 
-      <!-- Events Section -->
-      <!-- <section id="events">
+        <!-- Events Section -->
+        <!-- <section id="events">
           <h2>Upcoming & Recent Events</h2>
 
           <div class="events-list">
@@ -387,8 +469,8 @@
           </div>
         </section> -->
 
-      <!-- CV Section -->
-      <!-- <section id="cv">
+        <!-- CV Section -->
+        <!-- <section id="cv">
           <h2>Curriculum Vitae</h2>
 
           <p>
@@ -453,67 +535,73 @@
           </ul>
         </section> -->
 
-      <!-- Contact Section -->
-      <section id="contact">
-        <h2>Contact</h2>
-        <p style="font-size: 1.05rem; margin-bottom: 2rem">
-          I love connecting with researchers, designers, and community
-          partners who care about creating a more accessible world. Feel free
-          to reach out!
-        </p>
-        <div class="contact-grid">
-          <div>
-            <h3 style="
+        <!-- Contact Section -->
+        <section id="contact">
+          <h2>Contact</h2>
+          <p style="font-size: 1.05rem; margin-bottom: 2rem">
+            I love connecting with researchers, designers, and community
+            partners who care about creating a more accessible world. Feel free
+            to reach out!
+          </p>
+          <div class="contact-grid">
+            <div>
+              <h3
+                style="
                   color: var(--accent-color);
                   font-size: 1rem;
                   margin-bottom: 1rem;
-                ">
-              Connect
-            </h3>
-            <p style="margin-bottom: 0.5rem">
-              <strong>Email:</strong>
-              <a href="mailto:zjhuang@umich.edu">zjhuang@umich.edu</a>
-            </p>
-            <p style="margin-bottom: 0.5rem">
-              <strong>GitHub:</strong>
-              <a href="https://github.com/zjhuang2">@zjhuang2</a>
-            </p>
-            <p style="margin-bottom: 0.5rem">
-              <strong>Scholar:</strong>
-              <a href="https://scholar.google.com/citations?user=tYjsMXYAAAAJ&hl=en">Google Scholar</a>
-            </p>
-            <p>
-              <strong>Twitter/X:</strong>
-              <a href="https://twitter.com/jzh2o">@jzh2o</a>
-            </p>
-          </div>
-          <div>
-            <h3 style="
+                "
+              >
+                Connect
+              </h3>
+              <p style="margin-bottom: 0.5rem">
+                <strong>Email:</strong>
+                <a href="mailto:zjhuang@umich.edu">zjhuang@umich.edu</a>
+              </p>
+              <p style="margin-bottom: 0.5rem">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/zjhuang2">@zjhuang2</a>
+              </p>
+              <p style="margin-bottom: 0.5rem">
+                <strong>Scholar:</strong>
+                <a
+                  href="https://scholar.google.com/citations?user=tYjsMXYAAAAJ&hl=en"
+                  >Google Scholar</a
+                >
+              </p>
+              <p>
+                <strong>Twitter/X:</strong>
+                <a href="https://twitter.com/jzh2o">@jzh2o</a>
+              </p>
+            </div>
+            <div>
+              <h3
+                style="
                   color: var(--accent-color);
                   font-size: 1rem;
                   margin-bottom: 1rem;
-                ">
-              Find Me
-            </h3>
-            <p style="margin-bottom: 0.5rem">
-              Computer Science & Engineering<br />University of Michigan
-            </p>
-            <p style="margin-bottom: 0.5rem">
-              Soundability Lab · Ann Arbor, MI
-            </p>
+                "
+              >
+                Find Me
+              </h3>
+              <p style="margin-bottom: 0.5rem">
+                Computer Science & Engineering<br />University of Michigan
+              </p>
+              <p style="margin-bottom: 0.5rem">
+                Soundability Lab · Ann Arbor, MI
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- Footer -->
-      <footer>
-        <p>© 2025 Jeremy Zhengqi Huang</p>
-      </footer>
-    </main>
-  </div>
+        <!-- Footer -->
+        <footer>
+          <p>© 2025 Jeremy Zhengqi Huang</p>
+        </footer>
+      </main>
+    </div>
 
-  <!-- JavaScript for Interactivity -->
-  <script src="script.js"></script>
-</body>
-
+    <!-- JavaScript for Interactivity -->
+    <script src="script.js"></script>
+  </body>
 </html>
