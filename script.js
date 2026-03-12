@@ -13,23 +13,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Navbar scroll effect (desktop only)
+// Update active navigation link on scroll
 window.addEventListener("scroll", () => {
-  const navbar = document.getElementById("navbar");
-  if (navbar && window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else if (navbar) {
-    navbar.classList.remove("scrolled");
-  }
-
-  // Update active navigation link
   let current = "";
   const sections = document.querySelectorAll("section");
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= sectionTop - 150) {
+    if (scrollY >= sectionTop - 120) {
       current = section.getAttribute("id");
     }
   });
@@ -38,7 +29,8 @@ window.addEventListener("scroll", () => {
     .querySelectorAll(".nav-links a, .mobile-nav-links a")
     .forEach((link) => {
       link.classList.remove("active");
-      if (link.getAttribute("href").slice(1) === current) {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("#") && href.slice(1) === current) {
         link.classList.add("active");
       }
     });
@@ -51,18 +43,15 @@ const mobileMenu = document.getElementById("mobile-menu");
 if (mobileToggle && mobileMenu) {
   mobileToggle.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
-    mobileToggle.textContent = mobileMenu.classList.contains("active")
-      ? "✕"
-      : "☰";
+    mobileToggle.innerHTML = mobileMenu.classList.contains("active")
+      ? "&#10005;"
+      : "&#9776;";
   });
 
-  // Close mobile menu when link is clicked
   document.querySelectorAll(".mobile-nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active");
-      mobileToggle.textContent = "☰";
+      mobileToggle.innerHTML = "&#9776;";
     });
   });
 }
-
-// Removed scroll-triggered animations for a more minimal aesthetic
