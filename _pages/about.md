@@ -8,14 +8,6 @@ profile:
   align: right
   image: portrait.jpeg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <div class="profile-contact-list">
-      <a href="mailto:zjhuang2@umich.edu"><i class="fa-solid fa-envelope"></i><span>zjhuang2@umich.edu</span></a>
-      <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-      <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
-      <a href="https://scholar.google.com/"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a>
-      <a href="/assets/rendercv/rendercv_output/Albert_Einstein_CV.pdf"><i class="ai ai-cv"></i><span>Curriculum Vitae</span></a>
-    </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page

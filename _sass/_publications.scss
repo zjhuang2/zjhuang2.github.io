@@ -39,8 +39,30 @@
     li {
       margin-bottom: 1rem;
 
+      .publication-thumbnail-col,
+      .publication-content-col {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      @media (min-width: 576px) {
+        .publication-thumbnail-col {
+          flex: 0 0 30%;
+          max-width: 30%;
+        }
+
+        .publication-content-col {
+          flex: 0 0 70%;
+          max-width: 70%;
+        }
+      }
+
       .preview {
         display: inline-block;
+        width: 100%;
+        height: auto;
       }
 
       .abbr {
