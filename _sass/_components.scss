@@ -67,6 +67,39 @@ ul.task-list input[type="checkbox"] {
       display: inline-block;
       margin: 0;
     }
+
+    .profile-contact-list {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-family: inherit;
+
+      a {
+        display: grid;
+        grid-template-columns: 1.35rem minmax(0, 1fr);
+        align-items: center;
+        column-gap: 0.55rem;
+        color: var(--global-theme-color);
+        font-size: 0.95rem;
+        line-height: 1.25;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--global-theme-color);
+          text-decoration: underline;
+        }
+      }
+
+      i {
+        justify-self: center;
+        font-size: 1rem;
+      }
+
+      span {
+        overflow-wrap: anywhere;
+      }
+    }
   }
 }
 

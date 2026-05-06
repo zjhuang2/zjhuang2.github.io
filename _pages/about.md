@@ -2,19 +2,23 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Ph.D. Candidate, University of Michigan
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: portrait.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <div class="profile-contact-list">
+      <a href="mailto:zjhuang2@umich.edu"><i class="fa-solid fa-envelope"></i><span>zjhuang2@umich.edu</span></a>
+      <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+      <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+      <a href="https://scholar.google.com/"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a>
+      <a href="/assets/rendercv/rendercv_output/Albert_Einstein_CV.pdf"><i class="ai ai-cv"></i><span>Curriculum Vitae</span></a>
+    </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -22,7 +26,7 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
@@ -35,4 +39,4 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 I am a PhD student in Computer Science and Engineering at the University of Michigan, advised by [Dhruv Jain](https://web.eecs.umich.edu/~profdj/) in the [Soundability Lab](https://soundability.eecs.umich.edu/).
 
-My research focuses on human-AI interaction for accessibility. I build and deploy systems that help people navigate and make sense of complex sensory environments, and shape those environments around their needs — especially for people with diverse sensory experiences.
+My research focuses on human-AI collaboration for supporting participation and engagement in everyday environments. I build and deploy systems that help people navigate and make sense of complex sensory environments, and shape those environments around their needs — especially for people with disabilities.
