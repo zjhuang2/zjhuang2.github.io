@@ -31,4 +31,4 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 I am a PhD student in Computer Science and Engineering at the University of Michigan, advised by [Dhruv Jain](https://web.eecs.umich.edu/~profdj/) in the [Soundability Lab](https://soundability.eecs.umich.edu/).
 
-My research focuses on human-AI collaboration for supporting participation and engagement in everyday environments. I build and deploy systems that help people navigate and make sense of complex sensory environments, and shape those environments around their needs — especially for people with disabilities.
+My research focuses on human-AI collaboration for accessible environments. I build and deploy interactive systems that help people navigate and make sense of complex sensory environments, and shape them around their evolving needs — especially for people with disabilities.
