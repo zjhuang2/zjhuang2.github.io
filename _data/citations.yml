@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-13'
+  last_updated: '2026-07-27'
 papers:
   tYjsMXYAAAAJ:IjCSPb-OGe4C:
     citations: 15
@@ -26,10 +26,10 @@ papers:
     title: A human-AI collaborative approach for designing sound awareness systems
     year: '2024'
   tYjsMXYAAAAJ:u-x6o8ySG0sC:
-    citations: 25
+    citations: 24
     title: "\u201CNot There Yet\u201D: Feasibility and Challenges of Mobile Sound Recognition to Support Deaf and Hard-of-Hearing People"
     year: '2023'
   tYjsMXYAAAAJ:u5HHmVD_uO8C:
-    citations: 15
+    citations: 16
     title: 'AdaptiveSound: An interactive feedback-loop system to improve sound recognition for deaf and hard of hearing users'
     year: '2023'
