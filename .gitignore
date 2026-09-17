@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# Editors and local tooling
+.vscode/
+.idea/
+.claude/
+*.swp
+
+# Local build / server junk
+node_modules/
+*.log

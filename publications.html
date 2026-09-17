@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>publications · Jeremy Zhengqi Huang</title>
+    <meta
+      name="description"
+      content="Publications by Jeremy Zhengqi Huang on sound accessibility and human-AI collaboration."
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>J</text></svg>"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved
+            ? saved === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.setAttribute("data-theme", "dark");
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="index.html"
+          ><strong>Jeremy</strong><span class="nav__mid"> Zhengqi</span> Huang</a
+        >
+        <nav class="nav__links" aria-label="Main">
+          <a class="nav__link" href="index.html">About</a>
+          <a class="nav__link" href="publications.html">Publications</a>
+          <a class="nav__link" href="assets/pdf/huang-cv.pdf" data-cv>CV</a>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark theme"
+            title="Toggle theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.6 13.2A9 9 0 1 1 10.8 2.4a7.2 7.2 0 0 0 10.8 10.8z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-14a1 1 0 0 1 1 1v1.5a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1V20a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zM3 12a1 1 0 0 1 1-1h1.5a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm15.5-1H20a1 1 0 1 1 0 2h-1.5a1 1 0 1 1 0-2zM5.6 5.6a1 1 0 0 1 1.4 0l1 1a1 1 0 1 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4zm10.4 10.4a1 1 0 0 1 1.4 0l1 1a1 1 0 0 1-1.4 1.4l-1-1a1 1 0 0 1 0-1.4zm2.4-10.4a1 1 0 0 1 0 1.4l-1 1A1 1 0 0 1 16 6.6l1-1a1 1 0 0 1 1.4 0zM8 16a1 1 0 0 1 0 1.4l-1 1A1 1 0 0 1 5.6 17l1-1a1 1 0 0 1 1.4 0z"
+              />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <div class="container">
+        <h1 class="section__title" style="font-size: 2.25rem">Publications</h1>
+        <p class="page__lede">In reverse chronological order.</p>
+        <input
+          class="filter"
+          id="filter"
+          type="search"
+          placeholder="Type to filter…"
+          autocomplete="off"
+          data-filter
+          aria-label="Filter publications"
+        />
+
+        <div data-all-pubs></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        © <span data-year>2026</span> Jeremy Zhengqi Huang
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
