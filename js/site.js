@@ -85,7 +85,7 @@
       (n) => `
       <div class="news__item">
         <div class="news__date">${esc(formatDate(n.date))}</div>
-        <div class="news__text">${esc(n.text)}</div>
+        <div class="news__text">${n.html ?? esc(n.text)}</div>
       </div>`
     ).join("");
   }

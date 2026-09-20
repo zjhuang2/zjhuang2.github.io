@@ -16,8 +16,17 @@ const SITE = {
   cv: "assets/pdf/huang-cv.pdf",
 };
 
-/* Newest first. `date` is ISO; it is displayed as e.g. "Aug 22, 2025". */
+/* Newest first. `date` is ISO; it is displayed as e.g. "Aug 22, 2025".
+   Use `text` for plain text, or `html` for hand-authored markup with links. */
 const NEWS = [
+  {
+    date: "2026-09-18",
+    html: 'I am heading to the <a href="https://www.misophoniaresearchfund.org/press/2026-misophonia-collaboration-forum-building-strategies-for-action">Misophonia Collaboration Forum</a> in Atlanta, GA to present our ongoing work on human-AI systems for supporting people with sound sensitivity!',
+  },
+  {
+    date: "2026-08-21",
+    html: 'Our demo paper on soundscape mediation systems for people with sound sensitivity has been accepted to UIST 2026!',
+  },
   {
     date: "2025-08-22",
     text: "Our work on transforming non-speech captions with anchored generative models is headed to ASSETS 2025 in Denver!",
@@ -36,7 +45,7 @@ const PUBLICATIONS = [
     title: "Sona: Real-Time Multi-Target Sound Attenuation for Noise Sensitivity",
     authors:
       "Jeremy Zhengqi Huang, Emani Hicks, Sidharth, Gillian R. Hayes, and Dhruv Jain",
-    venue: "CHI '26 Extended Abstracts and arXiv preprint",
+    venue: "UIST'26 Demo and arXiv Preprint",
     preview: "assets/img/pub/sona-demo.jpeg",
     arxiv: "https://arxiv.org/abs/2604.00447",
     pdf: "assets/pdf/sona-arxiv.pdf",
