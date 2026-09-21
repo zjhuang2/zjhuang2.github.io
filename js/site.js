@@ -35,6 +35,20 @@
     const btn = document.querySelector(".theme-toggle");
     if (!btn) return;
 
+    /* The inline <head> script may already have switched the page to dark, in
+       which case the label baked into the HTML is describing the opposite of
+       what the button does. Derive it from the live theme instead of trusting
+       the markup, and sync once before wiring the listener up. */
+    const syncLabel = () => {
+      const dark = root.getAttribute("data-theme") === "dark";
+      btn.setAttribute(
+        "aria-label",
+        `Switch to ${dark ? "light" : "dark"} theme`
+      );
+    };
+
+    syncLabel();
+
     btn.addEventListener("click", function () {
       const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
@@ -43,7 +57,7 @@
       } catch (e) {
         /* private mode — theme just won't persist */
       }
-      btn.setAttribute("aria-label", `Switch to ${next === "dark" ? "light" : "dark"} theme`);
+      syncLabel();
     });
   }
 
@@ -166,6 +180,9 @@
   }
 
   function initFilter(input, listEl) {
+    const status = document.querySelector("[data-filter-status]");
+    let announce;
+
     const apply = () => {
       const q = input.value.trim().toLowerCase();
       const matches = !q
@@ -174,7 +191,24 @@
             [p.title, p.authors, p.venue, p.year].join(" ").toLowerCase().includes(q)
           );
       renderGrouped(listEl, matches);
+
+      /* Swapping the list out is silent to a screen reader, so report the count
+         through the live region. Let typing settle first — announcing on every
+         keystroke is worse than announcing nothing. */
+      if (!status) return;
+      clearTimeout(announce);
+      announce = setTimeout(() => {
+        const n = matches.length;
+        status.textContent = !q
+          ? ""
+          : n === 0
+            ? "No publications match that filter."
+            : n === 1
+              ? "1 publication matches that filter."
+              : `${n} publications match that filter.`;
+      }, 400);
     };
+
     input.addEventListener("input", apply);
     apply();
   }
