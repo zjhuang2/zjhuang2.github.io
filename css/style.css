@@ -343,9 +343,9 @@ main:focus {
 .hero__name {
   margin: 0;
   color: var(--text);
-  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-size: clamp(2rem, 5.5vw, 2.5rem);
   font-weight: var(--weight-regular);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   line-height: 1.1;
 }
 
