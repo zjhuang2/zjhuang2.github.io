@@ -42,7 +42,7 @@ const NEWS = [
 const PUBLICATIONS = [
   {
     year: 2026,
-    title: "Sona: Real-Time Multi-Target Sound Attenuation for Noise Sensitivity",
+    title: "Sona: Personalized Soundscape Mediation to Support People with Sound Sensitivity",
     authors:
       "Jeremy Zhengqi Huang, Emani Hicks, Sidharth, Gillian R. Hayes, and Dhruv Jain",
     venue: "UIST'26 Demo and arXiv Preprint",
