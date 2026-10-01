@@ -56,25 +56,26 @@ URLs also live in `SITE` in `js/data.js` for the ones rendered by script.
 
 `css/style.css` starts with two blocks of CSS custom properties: `:root` for
 light mode and `:root[data-theme="dark"]` for dark. Change `--accent`, `--bg`,
-or `--border` there and it propagates everywhere. Light mode is a warm
-near-white (`#fcfcfb`) with warm neutral text and a muted scarlet accent
-(`#a44b3a`); dark mode is a warm charcoal with a lighter scarlet (`#dd6957`).
+or `--border` there and it propagates everywhere. The look borrows from Meta's
+AI blog: light mode is white with a slate-navy ink (`#1c2b33`), cool blue-grey
+secondary text, light grey surfaces (`#f1f4f7`), and Meta blue (`#0064e0`) as
+the accent; dark mode is a deep slate (`#0d161c`) with a lighter blue
+(`#4c9dff`).
 
-The whole palette sits on one warm axis: the accent is hue 10, and the ink,
-greys, and borders are all hue 15–23 at low saturation. If you change the
-accent hue, shift those with it or the greys will read as the wrong
-temperature.
+The neutrals all lean slightly blue so they sit with the accent. If you change
+the accent to a warm hue, cool greys will read as the wrong temperature, so
+shift them too. `--on-accent` is the text colour on a solid accent fill (the
+CV button): white in light mode, ink in dark mode, because white on the
+lighter dark-mode blue fails contrast.
 
-Two typefaces, both from Google Fonts (loaded in each page's `<head>`):
+Components are mostly pills: nav links, the CV button, publication chips
+(outbound ones get a ↗ arrow), the filter box, and the year tags on the
+publications page. Social icons are circles. Images get rounded corners.
 
-- **Castoro** (`--font-head`) for headings — navbar, your name, section titles,
-  year markers, publication titles.
-- **Inter** (`--font`) for everything else — body copy, author lists, chips.
-
-Castoro ships Regular and Italic only, with **no bold weight**. Asking for
-`font-weight: 600` or `700` on a Castoro element makes the browser fake it, and
-it looks muddy — so emphasis in headings is done with color instead. That is why
-"Jeremy" is darker than "Zhengqi Huang" rather than bolder.
+One typeface, **Wix Madefor Text**, from Google Fonts (loaded in each page's
+`<head>`). It is variable from 400 to 800 with real italics, so emphasis uses
+weight: "Jeremy" is bolder than "Zhengqi Huang". It sets wider than most UI
+faces, which is why the nav has an extra tightening step below 360px.
 
 The navbar's frosted-glass effect is `backdrop-filter: saturate(180%) blur(18px)`
 on `.nav`, with an opaque fallback for browsers that don't support it.

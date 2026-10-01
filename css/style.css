@@ -6,36 +6,48 @@
 /* --- Design tokens -------------------------------------------------------- */
 
 :root {
-  --bg: #fcfcfb;
-  --bg-subtle: #ebe8e5;
-  --text: #292322;
-  --text-muted: #6a6360;
-  --text-faint: #887e7b;
-  --border: #e2dcd8;
-  --accent: #a44b3a;
-  --accent-soft: rgba(164, 75, 58, 0.09);
-  --nav-bg: rgba(252, 252, 251, 0.72);
-  --shadow: 0 1px 2px rgba(58, 45, 41, 0.06), 0 10px 28px rgba(58, 45, 41, 0.08);
+  --bg: #ffffff;
+  --bg-subtle: #f1f4f7;
+  --bg-hover: #e4e9ee;
+  --text: #1c2b33;
+  --text-muted: #465a69;
+  --text-faint: #5a6e7f;
+  --border: #dee3e9;
+  --accent: #0064e0;
+  --accent-hover: #0053ba;
+  --accent-soft: rgba(0, 100, 224, 0.12);
+  /* Text that sits on a solid --accent fill. */
+  --on-accent: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  /* A data URI can't inherit currentColor, so the filter's magnifier is
+     baked once per theme. Stroke is --text-faint. */
+  --search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a6e7f' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
 
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif;
-  /* Castoro ships Regular + Italic only — never ask it for a bold weight. */
-  --font-head: "Castoro", Georgia, "Times New Roman", serif;
+  --font: "Wix Madefor Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
   --measure: 860px;
-  --nav-h: 60px;
+  --nav-h: 64px;
 }
 
 :root[data-theme="dark"] {
-  --bg: #1c1917;
-  --bg-subtle: #26211f;
-  --text: #ebe7e5;
-  --text-muted: #a49a96;
-  --text-faint: #8c807b;
-  --border: #37302d;
-  --accent: #dd6957;
-  --accent-soft: rgba(221, 105, 87, 0.14);
-  --nav-bg: rgba(28, 25, 23, 0.72);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px rgba(0, 0, 0, 0.3);
+  --bg: #0d161c;
+  --bg-subtle: #18242c;
+  --bg-hover: #22313b;
+  --text: #e6ebef;
+  --text-muted: #a7b3bf;
+  --text-faint: #8695a3;
+  --border: #24333d;
+  --accent: #4c9dff;
+  --accent-hover: #7ab6ff;
+  --accent-soft: rgba(76, 157, 255, 0.18);
+  /* White on this lighter blue is under 3:1, so filled accents flip to ink. */
+  --on-accent: #0b1419;
+  --nav-bg: rgba(13, 22, 28, 0.78);
+  --search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238695a3' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
 }
 
 /* --- Base ----------------------------------------------------------------- */
@@ -57,11 +69,9 @@ body {
   color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
-  line-height: 1.65;
-  letter-spacing: -0.011em;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "cv05" 1, "ss01" 1;
 }
 
 a {
@@ -70,14 +80,15 @@ a {
 }
 
 a:hover {
+  color: var(--accent-hover);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
 /* Prose links stay underlined at all times. Colour alone is not a sufficient
-   cue: inside .news__text the accent sits at ~1.02:1 against the muted body
-   colour, and no accent in this palette can clear 3:1 against body text while
-   still clearing 4.5:1 against the page — so the underline has to carry it.
+   cue: the blue sits at ~2.7:1 against the body ink, under the 3:1 a
+   colour-only link needs, and any blue light enough to clear that falls under
+   4.5:1 against the page — so the underline has to carry it.
    Kept deliberately quiet (hairline, dropped low, 35% ink) and brought to full
    strength on hover and focus. Scoped to <p> so the icon links in .socials
    keep their undecorated treatment.
@@ -88,7 +99,7 @@ a:hover {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
-  transition: text-decoration-color 0.15s ease;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .hero__bio p a:hover,
@@ -108,10 +119,11 @@ img {
   background: var(--accent-soft);
 }
 
+/* No border-radius here: outlines follow each element's own radius, so pills
+   get pill-shaped rings and circles get circular ones. */
 :focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline-offset: 2px;
 }
 
 .container {
@@ -125,9 +137,11 @@ img {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--bg);
-  color: var(--text);
-  padding: 10px 16px;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  padding: 10px 18px;
   z-index: 200;
 }
 
@@ -189,36 +203,36 @@ main:focus {
 }
 
 .nav__brand {
-  color: var(--text-muted);
-  font-family: var(--font-head);
+  color: var(--text);
   font-size: 1.0625rem;
   font-weight: 400;
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
 .nav__brand:hover {
+  color: var(--text);
   text-decoration: none;
-  color: var(--accent);
 }
 
 .nav__brand strong {
-  color: var(--text);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .nav__link {
   color: var(--text-muted);
-  font-family: var(--font-head);
   font-size: 0.9375rem;
-  font-weight: 400;
-  padding: 6px 10px;
-  border-radius: 8px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
   transition: color 0.15s ease, background 0.15s ease;
 }
 
@@ -229,18 +243,32 @@ main:focus {
 }
 
 .nav__link.is-active {
-  color: var(--accent);
+  color: var(--text);
+  background: var(--bg-subtle);
+}
+
+/* The CV link doubles as the bar's call to action. */
+.nav__link--cta {
+  margin-left: 6px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.nav__link--cta:hover {
+  background: var(--accent-hover);
+  color: var(--on-accent);
 }
 
 .theme-toggle {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   margin-left: 4px;
   padding: 0;
   border: 0;
-  border-radius: 8px;
+  border-radius: 50%;
   background: transparent;
   color: var(--text-muted);
   cursor: pointer;
@@ -268,56 +296,70 @@ main:focus {
 /* --- Page scaffolding ----------------------------------------------------- */
 
 .page {
-  padding-top: calc(var(--nav-h) + 56px);
-  padding-bottom: 72px;
+  padding-top: calc(var(--nav-h) + 64px);
+  padding-bottom: 32px;
 }
 
 .section {
-  margin-top: 64px;
+  margin-top: 88px;
 }
 
 .section__title {
-  margin: 0 0 20px;
-  font-family: var(--font-head);
-  font-size: 1.875rem;
-  font-weight: 400;
-  letter-spacing: -0.005em;
+  margin: 0 0 24px;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--text);
+}
+
+.page__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.page__lede {
+  margin: 12px 0 0;
+  color: var(--text-muted);
+  font-size: 1.125rem;
 }
 
 /* --- Hero ----------------------------------------------------------------- */
 
 .hero__name {
   margin: 0;
-  color: var(--text-muted);
-  font-family: var(--font-head);
-  font-size: clamp(2rem, 6vw, 2.75rem);
+  color: var(--text);
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
   font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .hero__name strong {
-  color: var(--text);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .hero__subtitle {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   color: var(--text-muted);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
 }
 
 .hero__body {
   display: grid;
   grid-template-columns: 1fr 240px;
-  gap: 40px;
+  gap: 48px;
   align-items: start;
-  margin-top: 28px;
+  margin-top: 36px;
 }
 
 .hero__bio p {
   margin: 0 0 16px;
+  font-size: 1.0625rem;
+  line-height: 1.65;
 }
 
 .hero__bio p:last-child {
@@ -330,8 +372,7 @@ main:focus {
 
 .hero__portrait img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-lg);
 }
 
 /* --- Social icons --------------------------------------------------------- */
@@ -340,37 +381,37 @@ main:focus {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
-  margin-top: 26px;
+  gap: 10px;
+  margin-top: 28px;
 }
 
 .socials a {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  color: var(--text-muted);
-  transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  color: var(--text);
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
 .socials a:hover {
-  color: var(--accent);
-  background: var(--bg-subtle);
-  transform: translateY(-1px);
+  color: var(--bg);
+  background: var(--text);
   text-decoration: none;
 }
 
 .socials svg {
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
 .socials svg.stroke-icon {
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.7;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -384,35 +425,51 @@ main:focus {
 .news__item {
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 24px;
-  padding: 16px 0;
+  gap: 32px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
 
 .news__date {
-  color: var(--text);
+  color: var(--text-muted);
   font-size: 0.875rem;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
   padding-top: 2px;
 }
 
 .news__text {
-  color: var(--text-muted);
+  color: var(--text);
 }
 
 /* --- Publications --------------------------------------------------------- */
 
+/* A hairline running into a pill, in the manner of a section tag. The rule
+   is drawn by ::before so the pill can sit on it without a full-width box. */
 .pub-year {
-  position: relative;
-  margin: 48px 0 8px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-  color: var(--text-faint);
-  font-family: var(--font-head);
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: right;
-  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 56px 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+
+.pub-year::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.pub-year span {
+  padding: 5px 12px 5px 14px; /* trailing tracking eats into the right side */
+  border-radius: var(--radius-pill);
+  background: var(--text);
+  color: var(--bg);
+  font-variant-numeric: tabular-nums;
 }
 
 .pub-list {
@@ -424,8 +481,8 @@ main:focus {
 .pub {
   display: grid;
   grid-template-columns: 200px 1fr;
-  gap: 26px;
-  padding: 22px 0;
+  gap: 28px;
+  padding: 28px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -437,18 +494,17 @@ main:focus {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: var(--bg-subtle);
 }
 
 .pub__title {
-  margin: 0 0 5px;
-  font-family: var(--font-head);
-  font-size: 1.125rem;
-  font-weight: 400;
+  margin: 0 0 6px;
+  font-size: 1.1875rem;
+  font-weight: 600;
   line-height: 1.35;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .pub__authors {
@@ -463,50 +519,65 @@ main:focus {
 }
 
 .pub__venue {
-  margin: 2px 0 0;
-  color: var(--text-muted);
-  font-size: 0.9375rem;
-  font-style: italic;
+  margin: 4px 0 0;
+  color: var(--text-faint);
+  font-size: 0.875rem;
 }
 
 .pub__links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .chip {
-  display: inline-block;
-  padding: 3px 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle);
+  color: var(--text);
   font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 
-.chip:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--accent-soft);
+/* Outbound links get the north-east arrow. Painted through a mask rather
+   than a text glyph so screen readers don't read "north east arrow". */
+a.chip::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 8 8 2M3 2h5v5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 8 8 2M3 2h5v5'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.chip:hover,
+.chip[aria-expanded="true"] {
+  background: var(--text);
+  color: var(--bg);
   text-decoration: none;
 }
 
 .pub__abstract {
-  margin-top: 12px;
-  padding: 14px 16px;
-  border-radius: 8px;
+  margin-top: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
   background: var(--bg-subtle);
   color: var(--text-muted);
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .pub__abstract[hidden] {
@@ -516,31 +587,37 @@ main:focus {
 /* --- Filter --------------------------------------------------------------- */
 
 .filter {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
-  max-width: 340px;
-  margin-top: 8px;
-  padding: 9px 14px;
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  background: var(--bg);
+  max-width: 360px;
+  height: 46px;
+  margin-top: 24px;
+  padding: 0 18px 0 46px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--bg-subtle) var(--search-icon) 17px center / 18px 18px
+    no-repeat;
   color: var(--text);
   font-family: inherit;
   font-size: 0.9375rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .filter::placeholder {
   color: var(--text-faint);
 }
 
+.filter:hover {
+  background-color: var(--bg-hover);
+}
+
 .filter:focus {
   outline: none;
   border-color: var(--accent);
+  background-color: var(--bg);
   box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-.page__lede {
-  margin: 8px 0 0;
-  color: var(--text-muted);
 }
 
 .empty {
@@ -551,9 +628,9 @@ main:focus {
 /* --- Footer --------------------------------------------------------------- */
 
 .footer {
-  margin-top: 72px;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
+  margin-top: 96px;
+  padding: 32px 0;
+  background: var(--bg-subtle);
   color: var(--text-muted);
   font-size: 0.875rem;
   text-align: center;
@@ -562,9 +639,17 @@ main:focus {
 /* --- Responsive ----------------------------------------------------------- */
 
 @media (max-width: 720px) {
+  .page {
+    padding-top: calc(var(--nav-h) + 40px);
+  }
+
+  .section {
+    margin-top: 64px;
+  }
+
   .hero__body {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
 
   .hero__portrait {
@@ -582,8 +667,12 @@ main:focus {
   }
 
   .nav__link {
-    padding: 6px 6px;
+    padding: 6px 9px;
     font-size: 0.875rem;
+  }
+
+  .nav__link--cta {
+    margin-left: 2px;
   }
 
   .nav__brand {
@@ -601,14 +690,16 @@ main:focus {
 
 /* Under ~420px the brand, three links and the toggle overflow the bar and the
    theme toggle is clipped past the right edge — it cannot be tapped at all.
-   Tighten everything so the full nav stays reachable down to 320px. */
+   Tighten in two steps so the full nav stays reachable down to 320px; Wix
+   Madefor sets wider than most UI faces, so the last step is needed below
+   ~350px. Re-measure both if a nav label or the brand changes. */
 @media (max-width: 420px) {
   .container {
     padding: 0 16px;
   }
 
   .nav__inner {
-    gap: 8px;
+    gap: 6px;
   }
 
   .nav__brand {
@@ -616,14 +707,43 @@ main:focus {
   }
 
   .nav__link {
-    padding: 6px 4px;
+    padding: 6px 7px;
     font-size: 0.8125rem;
   }
 
-  .theme-toggle {
-    width: 30px;
-    height: 30px;
+  .nav__link--cta {
     margin-left: 2px;
+    padding: 6px 10px;
+  }
+
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav__inner {
+    gap: 4px;
+  }
+
+  .nav__brand {
+    font-size: 0.8125rem;
+  }
+
+  .nav__link {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+
+  .nav__link--cta {
+    padding: 6px 8px;
+  }
+
+  .theme-toggle {
+    width: 28px;
+    height: 28px;
   }
 }
 

@@ -161,7 +161,7 @@
           .filter((p) => p.year === y)
           .map((p) => pubItem(p, PUBLICATIONS.indexOf(p)))
           .join("");
-        return `<h2 class="pub-year">${esc(y)}</h2><ul class="pub-list">${items}</ul>`;
+        return `<h2 class="pub-year"><span>${esc(y)}</span></h2><ul class="pub-list">${items}</ul>`;
       })
       .join("");
   }
