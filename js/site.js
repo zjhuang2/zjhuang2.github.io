@@ -75,8 +75,8 @@
     const cvLinks = document.querySelectorAll("[data-cv]");
     cvLinks.forEach((a) => a.setAttribute("href", SITE.cv));
 
-    const mail = document.querySelector("[data-email]");
-    if (mail) mail.setAttribute("href", `mailto:${SITE.email}`);
+    const mailLinks = document.querySelectorAll("[data-email]");
+    mailLinks.forEach((a) => a.setAttribute("href", `mailto:${SITE.email}`));
 
     const year = document.querySelector("[data-year]");
     if (year) year.textContent = new Date().getFullYear();
