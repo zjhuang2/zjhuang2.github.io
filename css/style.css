@@ -332,17 +332,17 @@ main:focus {
 /* --- Page scaffolding ----------------------------------------------------- */
 
 .page {
-  padding-top: calc(var(--nav-h) + 64px);
-  padding-bottom: 32px;
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: 24px;
 }
 
 .section {
-  margin-top: 88px;
+  margin-top: 64px;
 }
 
 .section__title {
-  margin: 0 0 24px;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin: 0 0 18px;
+  font-size: clamp(1.625rem, 3.6vw, 2rem);
   font-weight: var(--weight-medium);
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -358,7 +358,7 @@ main:focus {
 }
 
 .page__lede {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--text-muted);
   font-size: 1.125rem;
 }
@@ -368,7 +368,7 @@ main:focus {
 .hero__name {
   margin: 0;
   color: var(--text);
-  font-size: clamp(2rem, 5.5vw, 2.5rem);
+  font-size: clamp(1.875rem, 5vw, 2.25rem);
   font-weight: var(--weight-regular);
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -379,7 +379,7 @@ main:focus {
 }
 
 .hero__subtitle {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--text-muted);
   font-size: 1.125rem;
 }
@@ -387,15 +387,15 @@ main:focus {
 .hero__body {
   display: grid;
   grid-template-columns: 1fr 240px;
-  gap: 48px;
+  gap: 40px;
   align-items: start;
-  margin-top: 36px;
+  margin-top: 28px;
 }
 
 .hero__bio > p {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .hero__bio > p:last-child {
@@ -414,8 +414,8 @@ main:focus {
 /* --- Callout -------------------------------------------------------------- */
 
 .callout {
-  margin-top: 24px;
-  padding: 16px 20px;
+  margin-top: 18px;
+  padding: 14px 18px;
   border-radius: var(--radius-md);
   background: var(--accent-surface-gradient);
 }
@@ -436,7 +436,7 @@ main:focus {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .socials a {
@@ -507,7 +507,7 @@ main:focus {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 56px 0 8px;
+  margin: 28px 0 4px;
   font-size: 0.75rem;
   font-weight: var(--weight-bold);
   letter-spacing: 0.2em;
@@ -538,8 +538,8 @@ main:focus {
 .pub {
   display: grid;
   grid-template-columns: 200px 1fr;
-  gap: 28px;
-  padding: 28px 0;
+  gap: 24px;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -585,7 +585,7 @@ main:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .chip {
@@ -628,8 +628,8 @@ a.chip::after {
 }
 
 .pub__abstract {
-  margin-top: 14px;
-  padding: 18px 20px;
+  margin-top: 10px;
+  padding: 14px 18px;
   border-radius: var(--radius-md);
   background: var(--bg-subtle);
   color: var(--text-muted);
@@ -648,8 +648,8 @@ a.chip::after {
   appearance: none;
   width: 100%;
   max-width: 360px;
-  height: 46px;
-  margin-top: 24px;
+  height: 44px;
+  margin-top: 20px;
   padding: 0 18px 0 46px;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
@@ -686,8 +686,8 @@ a.chip::after {
 /* --- Footer --------------------------------------------------------------- */
 
 .footer {
-  margin-top: 96px;
-  padding: 32px 0;
+  margin-top: 72px;
+  padding: 24px 0;
   background: var(--bg-subtle);
   color: var(--text-muted);
   font-size: 0.875rem;
@@ -698,16 +698,16 @@ a.chip::after {
 
 @media (max-width: 720px) {
   .page {
-    padding-top: calc(var(--nav-h) + 40px);
+    padding-top: calc(var(--nav-h) + 32px);
   }
 
   .section {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 
   .hero__body {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .hero__portrait {
