@@ -38,7 +38,7 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-pill: 999px;
-  --measure: 860px;
+  --measure: 920px;
   --nav-h: 64px;
 }
 
@@ -453,9 +453,9 @@ main:focus {
 
 .news__item {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 32px;
-  padding: 20px 0;
+  grid-template-columns: 112px 1fr;
+  gap: 24px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -464,11 +464,14 @@ main:focus {
   font-size: 0.875rem;
   font-weight: var(--weight-semibold);
   font-variant-numeric: tabular-nums;
-  padding-top: 2px;
+  line-height: 1.5;
+  padding-top: 1px;
 }
 
 .news__text {
   color: var(--text);
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 /* --- Publications --------------------------------------------------------- */
@@ -686,7 +689,11 @@ a.chip::after {
     max-width: 200px;
   }
 
-  .news__item,
+  .news__item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
   .pub {
     grid-template-columns: 1fr;
     gap: 10px;
