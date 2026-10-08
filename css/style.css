@@ -13,12 +13,17 @@
   --text-muted: #465a69;
   --text-faint: #5a6e7f;
   --border: #dee3e9;
-  --accent: #0064e0;
-  --accent-hover: #0053ba;
-  --accent-soft: rgba(0, 100, 224, 0.12);
-  /* Blue-tinted panel. Kept pale enough that --accent text on it still
+  --accent: #c8102e;
+  --accent-hover: #a50d26;
+  --accent-soft: rgba(200, 16, 46, 0.12);
+  /* Scarlet-tinted panel. Kept pale enough that --accent text on it still
      clears 4.5:1; a stronger tint pushes the link under. */
-  --accent-surface: #eef4fd;
+  --accent-surface: #fdf0f1;
+  /* The orange end of the accent gradient. Burnt rather than bright: white
+     text has to clear 4.5:1 on it too, and #e8590c-type oranges fall to ~3.6. */
+  --accent-warm: #cc4a0a;
+  --accent-warm-hover: #a8350a;
+  --accent-surface-warm: #ffeee2;
   /* Text that sits on a solid --accent fill. */
   --on-accent: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.8);
@@ -40,6 +45,23 @@
   --radius-pill: 999px;
   --measure: 920px;
   --nav-h: 64px;
+
+  /* Resolved on :root, so the dark block's stops flow through unchanged. */
+  --accent-gradient: linear-gradient(
+    120deg,
+    var(--accent-warm),
+    var(--accent)
+  );
+  --accent-gradient-hover: linear-gradient(
+    120deg,
+    var(--accent-warm-hover),
+    var(--accent-hover)
+  );
+  --accent-surface-gradient: linear-gradient(
+    120deg,
+    var(--accent-surface-warm),
+    var(--accent-surface)
+  );
 }
 
 :root[data-theme="dark"] {
@@ -50,11 +72,14 @@
   --text-muted: #a7b3bf;
   --text-faint: #8695a3;
   --border: #24333d;
-  --accent: #4c9dff;
-  --accent-hover: #7ab6ff;
-  --accent-soft: rgba(76, 157, 255, 0.18);
-  --accent-surface: #12253a;
-  /* White on this lighter blue is under 3:1, so filled accents flip to ink. */
+  --accent: #ff6b78;
+  --accent-hover: #ff9aa3;
+  --accent-soft: rgba(255, 107, 120, 0.18);
+  --accent-surface: #2c1519;
+  --accent-warm: #ffa25c;
+  --accent-warm-hover: #ffbd8a;
+  --accent-surface-warm: #2e1b12;
+  /* White on this lighter scarlet is under 3:1, so filled accents flip to ink. */
   --on-accent: #0b1419;
   --nav-bg: rgba(13, 22, 28, 0.78);
   --search-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238695a3' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
@@ -97,8 +122,8 @@ a:hover {
 }
 
 /* Prose links stay underlined at all times. Colour alone is not a sufficient
-   cue: the blue sits at ~2.7:1 against the body ink, under the 3:1 a
-   colour-only link needs, and any blue light enough to clear that falls under
+   cue: the scarlet sits at ~2.5:1 against the body ink, under the 3:1 a
+   colour-only link needs, and any red light enough to clear that falls under
    4.5:1 against the page — so the underline has to carry it.
    Kept deliberately quiet (hairline, dropped low, 35% ink) and brought to full
    strength on hover and focus. Scoped to <p> so the icon links in .socials
@@ -261,13 +286,13 @@ main:focus {
 /* The CV link doubles as the bar's call to action. */
 .nav__link--cta {
   margin-left: 6px;
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: var(--on-accent);
   font-weight: var(--weight-semibold);
 }
 
 .nav__link--cta:hover {
-  background: var(--accent-hover);
+  background: var(--accent-gradient-hover);
   color: var(--on-accent);
 }
 
@@ -392,7 +417,7 @@ main:focus {
   margin-top: 24px;
   padding: 16px 20px;
   border-radius: var(--radius-md);
-  background: var(--accent-surface);
+  background: var(--accent-surface-gradient);
 }
 
 .callout p {
