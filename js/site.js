@@ -113,7 +113,9 @@
         `<button type="button" class="chip" data-abs="${id}" aria-expanded="false" aria-controls="abs-${id}">abs</button>`
       );
     }
+    if (p.project) links.push(`<a class="chip" href="${esc(p.project)}">project</a>`);
     if (p.arxiv) links.push(`<a class="chip" href="${esc(p.arxiv)}">arXiv</a>`);
+    if (p.video) links.push(`<a class="chip" href="${esc(p.video)}">video</a>`);
     if (p.doi) links.push(`<a class="chip" href="${esc(p.doi)}">doi</a>`);
     if (p.url) links.push(`<a class="chip" href="${esc(p.url)}">link</a>`);
     if (p.pdf) links.push(`<a class="chip" href="${esc(p.pdf)}">pdf</a>`);

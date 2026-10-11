@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Sona: Personalized Soundscape Mediation to Support People with Sound
+      Sensitivity
+    </title>
+    <meta
+      name="description"
+      content="Sona is a mobile system that lets people with sound sensitivity turn down the specific sounds that bother them, in real time, while the rest of their surroundings stay audible."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://zjhuang2.github.io/projects/sona/"
+    />
+    <meta
+      property="og:title"
+      content="Sona: Personalized Soundscape Mediation to Support People with Sound Sensitivity"
+    />
+    <meta
+      property="og:description"
+      content="A mobile system that selectively attenuates the sounds people with sound sensitivity find bothersome, and learns new ones from their own recordings."
+    />
+    <meta
+      property="og:image"
+      content="https://zjhuang2.github.io/projects/sona/figures/teaser.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="hero">
+      <div class="wrap">
+        <h1 class="hero__title">
+          Sona: Personalized Soundscape Mediation to Support People with Sound
+          Sensitivity
+        </h1>
+
+        <div class="authors">
+          <!-- One line per author: whitespace inside an <li> would show up as a
+               space before the comma that follows it. -->
+          <!-- prettier-ignore -->
+          <ul>
+            <li><a href="../../">Jeremy Zhengqi Huang</a><sup>1</sup></li>
+            <li><a href="https://emanidotch.com/">Emani Hicks</a><sup>2</sup></li>
+            <li><a href="https://fnusid.github.io/">Sidharth</a><sup>1</sup></li>
+            <li><a href="https://www.gillianhayes.com/">Gillian R. Hayes</a><sup>3</sup></li>
+            <li><a href="https://web.eecs.umich.edu/~profdj/">Dhruv Jain</a><sup>1</sup></li>
+          </ul>
+        </div>
+        <p class="affiliations">
+          <span><sup>1</sup>University of Michigan</span>
+          <span><sup>2</sup>University of Houston</span>
+          <span><sup>3</sup>University of California, Irvine</span>
+        </p>
+        <p class="venue">UIST ’26 Demo</p>
+
+        <nav class="buttons" aria-label="Paper links">
+          <a class="btn" href="../../assets/pdf/sona-arxiv.pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+              />
+              <path d="M14 3v5h5M9 13h6M9 17h6" />
+            </svg>
+            Preprint
+          </a>
+          <a class="btn" href="https://arxiv.org/abs/2604.00447">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
+            arXiv
+          </a>
+          <a class="btn" href="https://www.youtube.com/watch?v=9btBaOAkGEg">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="3" />
+              <path d="m10 9 5 3-5 3z" />
+            </svg>
+            Video
+          </a>
+          <a class="btn" href="#bibtex">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 7h4v4c0 3-1.3 5-4 6M14 7h4v4c0 3-1.3 5-4 6" />
+            </svg>
+            BibTeX
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <div class="wrap teaser">
+        <figure class="figure">
+          <a href="figures/teaser.jpg">
+            <img
+              src="figures/teaser.jpg"
+              width="2400"
+              height="849"
+              alt="Three panels. A: a person at a kitchen table holds a phone while someone types on a laptop nearby, an air conditioner runs, a blender sits on the counter, and a smart speaker plays music. B: with noise-canceling headphones, all five sounds — keyboard, air conditioner, blender, music, and speech — are struck out. C: with Sona, only the bothersome keyboard, air conditioner, and blender are struck out, while music and speech stay audible. Below, an unrecognized sound becomes a new 'Blender' class from the user's recordings."
+            />
+          </a>
+          <figcaption>
+            Conventional noise-canceling headphones attenuate the soundscape
+            indiscriminately.
+            <strong>Sona selectively attenuates user-specified sounds</strong>
+            (here, keyboard typing, air-conditioner hum, and a blender) while
+            preserving desired sounds such as music and speech, and can be
+            extended with new sound classes recorded in the user’s own
+            environment.
+          </figcaption>
+        </figure>
+      </div>
+
+      <section class="section section--tint" aria-labelledby="abstract">
+        <div class="wrap">
+          <div class="prose">
+            <h2 id="abstract">Abstract</h2>
+            <p>
+              People with sound sensitivity (PWSS) often manage distressing
+              sounds with earplugs and noise-canceling headphones that broadly
+              suppress their surroundings, limiting access to useful auditory
+              cues. We present Sona, a mobile system for personalized, real-time
+              soundscape mediation, informed by prior sound sensitivity research
+              and an online survey of 68 PWSS. Sona selectively attenuates
+              multiple overlapping user-chosen sounds at adjustable strength,
+              suggests targets from ambient sound recognition, and lets users
+              add custom targets from short recordings without retraining the
+              model. In an in-situ evaluation with ten PWSS, participants
+              reported that Sona made their soundscapes more manageable. The
+              study also surfaced uneven attenuation across sound type and
+              context, tensions between managing filters and attending to
+              ongoing activities, and difficulty interpreting personalization
+              outcomes. These findings highlight the need to design for the
+              quality of the residual soundscape, balance user control with
+              interaction demands, and support guided, interpretable
+              personalization.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="system">
+        <div class="wrap">
+          <div class="prose">
+            <h2 id="system">How Sona Works</h2>
+            <p>
+              Sona follows a two-layer architecture. The Live Mediation Layer
+              runs entirely on device: it captures the microphone signal,
+              attenuates the user-selected target sounds with a multi-target
+              neural model at a user-adjustable strength, and streams the
+              processed audio to the user’s headphones in real time. Targets are
+              selected manually or from transient suggestions raised by an
+              on-device sound event recognizer. The Personalization Layer
+              extends coverage beyond the 25 built-in sound classes. Users
+              describe their triggers in natural language as sensitivity
+              profiles (e.g., “mechanical whirring”). During listening, Sona
+              uses audio language models to describe the ambient sound scene and
+              leverages an on-device LLM to match these descriptions against the
+              user’s profiles, and Sona prompts the user to save matching clips.
+              From these clips or manual recordings, users enroll a custom class
+              whose recordings are encoded into the same embedding space as the
+              built-in classes, so new targets can be attenuated without
+              retraining the deployed model.
+            </p>
+          </div>
+
+          <figure class="figure">
+            <a href="figures/architecture.jpg">
+              <img
+                src="figures/architecture.jpg"
+                width="2400"
+                height="739"
+                loading="lazy"
+                alt="System diagram beside a kitchen photo labeled 'Dog Barking' and 'Blender'. Live Mediation Layer: a Sound Recognizer feeds Trigger Suggestion ('Dog Barking detected. Suppress it?'), which together with Manual Selection feeds On-Device Neural Attenuation. Personalization Layer: Personal Sensitivity Profiles feed Sensitivity Profile Matching with an Audio LM ('I hear mechanical whirring sounds, which match your sensitivity profiles. Save it?'), which yields Discovered Trigger Clips that become a Custom Sound Class."
+              />
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--tint" aria-labelledby="framework">
+        <div class="wrap">
+          <div class="prose">
+            <h2 id="framework">Multi-Target Neural Attenuation</h2>
+            <p>
+              Sona’s attenuation model is an adapted Deep Complex Convolutional
+              Recurrent Network (DCCRN). Conditioned on embeddings of the
+              selected targets, it reconstructs the residual soundscape, i.e.,
+              the sum of all non-target sources in the microphone mixture.
+            </p>
+          </div>
+
+          <figure class="figure">
+            <a href="figures/attenuation-framework.svg">
+              <img
+                src="figures/attenuation-framework.svg"
+                width="1200"
+                height="800"
+                alt="Network diagram in three panels. (a) The mixture passes through an STFT, a six-block complex encoder, a FiLM layer, a two-layer complex LSTM, and a mirrored complex decoder with skip connections; a predicted mask multiplies the mixture spectrum and an inverse STFT produces the output. Target embeddings are fused by Linear plus SiLU, a max over targets, and a Linear layer into the condition that sets FiLM's gamma and beta. (b) A complex convolution block built from four real convolutions, followed by BatchNorm and PReLU. (c) A frozen AudioSep encoder, conditioned on a CLAP text embedding of the class name, turns reference audio into a 768-dimensional embedding through attentive statistics pooling."
+              />
+            </a>
+            <figcaption>
+              (a) DCCRN conditioned through FiLM on the fused embeddings of the
+              selected targets. (b) Complex convolution block. (c) Frozen
+              AudioSep encoder that turns a sound class into a 768-d embedding.
+            </figcaption>
+          </figure>
+
+          <div class="prose">
+            <ul class="points">
+              <li>
+                <strong>Multi-target conditioning.</strong> Embeddings of the
+                <i>K</i> selected targets are projected and max-pooled into a
+                single condition vector that modulates the bottleneck via FiLM,
+                so multiple overlapping targets are attenuated in one forward
+                pass.
+              </li>
+              <li>
+                <strong>Extensible target vocabulary.</strong> Each sound class
+                is represented by a 768-d embedding from a frozen AudioSep
+                encoder, held in an external store. Custom classes are enrolled
+                by encoding user recordings into the same space, leaving the
+                network weights unchanged.
+              </li>
+              <li>
+                <strong>Graded attenuation.</strong> The output is interpolated
+                with the unprocessed input,
+                <span class="formula"
+                  ><i>y</i> = (1 − <i>α</i>)<i>x</i> + <i>α</i><i>x̂</i></span
+                >, spanning pass-through (<i>α</i> = 0) to full attenuation (<i
+                  >α</i
+                >
+                = 1).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="bibtex">
+        <div class="wrap">
+          <div class="prose">
+            <h2 id="bibtex">BibTeX</h2>
+            <div class="bib">
+              <pre><code id="bibtex-entry">@misc{huang2026sona,
+  title         = {Sona: Personalized Soundscape Mediation to Support People with Sound Sensitivity},
+  author        = {Huang, Jeremy Zhengqi and Hicks, Emani and Sidharth and Hayes, Gillian R. and Jain, Dhruv},
+  year          = {2026},
+  eprint        = {2604.00447},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SD},
+  url           = {https://arxiv.org/abs/2604.00447}
+}</code></pre>
+              <button class="copy" type="button" data-copy="bibtex-entry">
+                Copy
+              </button>
+              <p class="visually-hidden" role="status" data-copy-status></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          <a href="../../">Jeremy Zhengqi Huang</a> · University of Michigan
+        </p>
+        <p>
+          Layout adapted from the
+          <a
+            href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+            >Academic Project Page Template</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var btn = document.querySelector("[data-copy]");
+        var status = document.querySelector("[data-copy-status]");
+        if (!btn) return;
+
+        btn.addEventListener("click", function () {
+          var code = document.getElementById(btn.dataset.copy);
+          var text = code.textContent;
+          var done = function (ok) {
+            /* No clipboard access (e.g. served over plain http): select the
+               entry instead so a normal copy shortcut still works. */
+            if (!ok) {
+              var range = document.createRange();
+              range.selectNodeContents(code);
+              var sel = window.getSelection();
+              sel.removeAllRanges();
+              sel.addRange(range);
+            }
+            btn.textContent = ok ? "Copied" : "Selected";
+            if (status) {
+              status.textContent = ok
+                ? "BibTeX copied to clipboard."
+                : "BibTeX selected. Copy it with your keyboard shortcut.";
+            }
+            setTimeout(function () {
+              btn.textContent = "Copy";
+            }, 2000);
+          };
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(
+              function () {
+                done(true);
+              },
+              function () {
+                done(false);
+              },
+            );
+          } else {
+            done(false);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

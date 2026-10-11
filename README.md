@@ -13,6 +13,7 @@ js/data.js          ← all content lives here
 js/site.js          rendering + theme toggle + filter
 assets/img/         portrait + publication previews
 assets/pdf/         papers and CV
+projects/sona/      Sona project page (self-contained: index.html, style.css, figures/)
 ```
 
 ## Editing content
@@ -34,9 +35,11 @@ Everything you'd normally update is in **`js/data.js`**.
   authors: "Jeremy Zhengqi Huang, Someone Else, and Dhruv Jain",
   venue: "Proceedings of Something (VENUE '26)",
   preview: "assets/img/pub/my-paper.png",   // optional
+  project: "projects/my-paper/",            // optional — project page
   doi: "https://doi.org/...",               // optional
   pdf: "assets/pdf/my-paper.pdf",           // optional
   arxiv: "https://arxiv.org/abs/...",       // optional
+  video: "https://www.youtube.com/...",     // optional
   url: "https://...",                       // optional
   abstract: `...`,                          // optional — adds an ABS toggle
   selected: true,                           // also show it on the home page

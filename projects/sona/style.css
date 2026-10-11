@@ -1,0 +1,425 @@
+/* ==========================================================================
+   Sona project page. Single column, centred hero, figure-led — the layout of
+   the Academic Project Page Template, rebuilt without Bulma so the page has
+   no dependencies beyond the font.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #f4f6f8;
+  --text: #1c2b33;
+  --text-muted: #465a69;
+  --text-faint: #5a6e7f;
+  --border: #dee3e9;
+  /* Blue rather than the homepage's scarlet: the paper's figures use blue for
+     the sounds people keep and red for the ones they turn down. */
+  --link: #1d5fa6;
+  --link-hover: #154a83;
+  --btn: #23292e;
+  --btn-hover: #000000;
+
+  --font: "Wix Madefor Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --wide: 1080px;
+  --measure: 760px;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  font-weight: 450;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: #fff;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.prose {
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Hero ----------------------------------------------------------------- */
+
+.hero {
+  padding: 80px 0 28px;
+  text-align: center;
+}
+
+.hero__title {
+  max-width: 920px;
+  margin: 0 auto 24px;
+  font-size: clamp(1.8rem, 1.2rem + 2.6vw, 2.8rem);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.authors {
+  margin: 0 0 6px;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.authors li {
+  display: inline;
+  /* Wrap between authors, never inside a name. */
+  white-space: nowrap;
+}
+
+.authors li:not(:last-child)::after {
+  content: ",";
+  margin-right: 0.35em;
+}
+
+.authors ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+sup {
+  font-size: 0.7em;
+  line-height: 0;
+  margin-left: 1px;
+}
+
+.affiliations {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.affiliations span {
+  white-space: nowrap;
+}
+
+.affiliations span + span {
+  margin-left: 1.1em;
+}
+
+.venue {
+  margin: 10px 0 0;
+  font-weight: 550;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px 9px 15px;
+  border-radius: 999px;
+  background: var(--btn);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* --- Figures -------------------------------------------------------------- */
+
+.figure {
+  margin: 0;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure a {
+  display: block;
+  cursor: zoom-in;
+}
+
+/* The paper's figures have white grounds; on a tinted band, frame them as
+   cards so the edge reads as deliberate rather than a hard white block. */
+.section--tint .figure img {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #ffffff;
+}
+
+.figure figcaption {
+  max-width: var(--measure);
+  margin: 16px auto 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.figure figcaption strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.figure + .figure,
+.prose + .figure {
+  margin-top: 32px;
+}
+
+.figure + p,
+.figure + h3 {
+  margin-top: 32px;
+}
+
+.teaser {
+  padding: 20px 0 56px;
+}
+
+/* --- Sections ------------------------------------------------------------- */
+
+.section {
+  padding: 64px 0;
+}
+
+.section--tint {
+  background: var(--surface);
+}
+
+.section h2 {
+  margin: 0 0 24px;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 1.9rem);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.section h3 {
+  margin: 36px 0 8px;
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.section p {
+  margin: 0 0 16px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Framework points ---------------------------------------------------- */
+
+.points {
+  margin: 32px 0 0;
+  padding-left: 1.2em;
+}
+
+.points li + li {
+  margin-top: 10px;
+}
+
+.points strong {
+  font-weight: 650;
+}
+
+.formula {
+  white-space: nowrap;
+}
+
+/* --- BibTeX --------------------------------------------------------------- */
+
+.bib {
+  position: relative;
+}
+
+.bib pre {
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background: var(--btn);
+  border-color: var(--btn);
+  color: #fff;
+}
+
+/* --- Footer --------------------------------------------------------------- */
+
+.site-footer {
+  padding: 40px 0 56px;
+  border-top: 1px solid var(--border);
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer p + p {
+  margin-top: 6px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --- Small screens -------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .wrap {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+
+  .authors {
+    font-size: 1.05rem;
+  }
+
+  .affiliations span {
+    display: block;
+  }
+
+  .affiliations span + span {
+    margin-left: 0;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .teaser {
+    padding-bottom: 40px;
+  }
+
+  .section--tint .figure img {
+    padding: 6px;
+  }
+
+  /* Leave room for the copy button over the first line of the entry. */
+  .bib pre {
+    padding-top: 48px;
+  }
+}
