@@ -38,7 +38,8 @@ const NEWS = [
 ];
 
 /* Newest first. `selected: true` also puts the paper on the home page.
-   Links: any of `pdf`, `doi`, `arxiv`, `url`. `abstract` adds an ABS toggle. */
+   Links: any of `pdf`, `doi`, `arxiv`, `url`. `abstract` adds an ABS toggle.
+   `award` (e.g. "Best Paper") shows as a badge under the venue. */
 const PUBLICATIONS = [
   {
     year: 2026,
@@ -52,6 +53,7 @@ const PUBLICATIONS = [
     video: "https://www.youtube.com/watch?v=9btBaOAkGEg",
     pdf: "assets/pdf/sona-arxiv.pdf",
     selected: true,
+    abstract: `People with sound sensitivity (PWSS) often manage distressing sounds with earplugs and noise-canceling headphones that broadly suppress their surroundings, limiting access to useful auditory cues. We present Sona, a mobile system for personalized, real-time soundscape mediation, informed by prior sound sensitivity research and an online survey of 68 PWSS. Sona selectively attenuates multiple overlapping user-chosen sounds at adjustable strength, suggests targets from ambient sound recognition, and lets users add custom targets from short recordings without retraining the model. In an in-situ evaluation with ten PWSS, participants reported that Sona made their soundscapes more manageable. The study also surfaced uneven attenuation across sound type and context, tensions between managing filters and attending to ongoing activities, and difficulty interpreting personalization outcomes. These findings highlight the need to design for the quality of the residual soundscape, balance user control with interaction demands, and support guided, interpretable personalization.`,
   },
   {
     year: 2025,
@@ -61,6 +63,7 @@ const PUBLICATIONS = [
     venue:
       "Proceedings of the 27th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS '25)",
     preview: "assets/img/pub/captune.png",
+    project: "projects/captune/",
     doi: "https://doi.org/10.1145/3663547.3746346",
     pdf: "assets/pdf/assets25-captune.pdf",
     selected: true,
@@ -124,6 +127,7 @@ const PUBLICATIONS = [
     authors: "Jeremy Zhengqi Huang, Hriday Chhabria, and Dhruv Jain",
     venue:
       "Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS '23)",
+    award: "Honorable Mention",
     preview: "assets/img/pub/not-there-yet.jpeg",
     doi: "https://doi.org/10.1145/3597638.3608431",
     pdf: "assets/pdf/ASSETS23-SWFieldStudy.pdf",

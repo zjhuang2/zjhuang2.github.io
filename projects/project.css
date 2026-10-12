@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Sona project page. Single column, centred hero, figure-led — the layout of
-   the Academic Project Page Template, rebuilt without Bulma so the page has
-   no dependencies beyond the font.
+   Shared stylesheet for the paper pages under projects/. Single column,
+   centred hero, figure-led — the layout of the Academic Project Page
+   Template, rebuilt without Bulma so the pages need nothing beyond the font.
    ========================================================================== */
 
 :root {
@@ -12,8 +12,8 @@
   --text-muted: #465a69;
   --text-faint: #5a6e7f;
   --border: #dee3e9;
-  /* Blue rather than the homepage's scarlet: the paper's figures use blue for
-     the sounds people keep and red for the ones they turn down. */
+  /* Blue rather than the homepage's scarlet: it sits more quietly beside the
+     papers' own figure colours. */
   --link: #1d5fa6;
   --link-hover: #154a83;
   --btn: #23292e;

@@ -13,7 +13,9 @@ js/data.js          ← all content lives here
 js/site.js          rendering + theme toggle + filter
 assets/img/         portrait + publication previews
 assets/pdf/         papers and CV
-projects/sona/      Sona project page (self-contained: index.html, style.css, figures/)
+projects/           paper pages: project.css (shared) + one folder per paper
+  sona/             index.html + figures/
+  captune/          index.html + figures/
 ```
 
 ## Editing content

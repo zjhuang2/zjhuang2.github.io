@@ -138,6 +138,7 @@
           <h3 class="pub__title">${esc(p.title)}</h3>
           <p class="pub__authors">${markAuthors(p.authors, SITE.me)}</p>
           <p class="pub__venue">${esc(p.venue)}, ${esc(p.year)}</p>
+          ${p.award ? `<p class="pub__award">${esc(p.award)}</p>` : ""}
           <div class="pub__links">${pubLinks(p, id)}</div>
           ${abstract}
         </div>
@@ -190,7 +191,7 @@
       const matches = !q
         ? PUBLICATIONS
         : PUBLICATIONS.filter((p) =>
-            [p.title, p.authors, p.venue, p.year].join(" ").toLowerCase().includes(q)
+            [p.title, p.authors, p.venue, p.year, p.award].join(" ").toLowerCase().includes(q)
           );
       renderGrouped(listEl, matches);
 
