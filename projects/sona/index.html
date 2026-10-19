@@ -200,12 +200,18 @@
       <section class="section section--tint" aria-labelledby="framework">
         <div class="wrap">
           <div class="prose">
-            <h2 id="framework">Multi-Target Neural Attenuation</h2>
+            <h2 id="framework">
+              Multi-Target, Extendable Neural Attenuation Framework
+            </h2>
             <p>
-              Sona’s attenuation model is an adapted Deep Complex Convolutional
-              Recurrent Network (DCCRN). Conditioned on embeddings of the
-              selected targets, it reconstructs the residual soundscape, i.e.,
-              the sum of all non-target sources in the microphone mixture.
+              Which sounds are bothersome differs from person to person, shifts
+              across contexts, and often involves several sounds at once. To
+              support these dynamic and idiosyncratic needs, we designed a
+              neural attenuation framework that handles multiple overlapping
+              targets in a single pass and extends to new, user-specific sounds
+              without retraining. At its core, an adapted DCCRN, conditioned on
+              embeddings of the selected targets, reconstructs the residual
+              soundscape.
             </p>
           </div>
 
@@ -229,10 +235,9 @@
             <ul class="points">
               <li>
                 <strong>Multi-target conditioning.</strong> Embeddings of the
-                <i>K</i> selected targets are projected and max-pooled into a
-                single condition vector that modulates the bottleneck via FiLM,
-                so multiple overlapping targets are attenuated in one forward
-                pass.
+                user-selected targets are projected and max-pooled into a single
+                condition vector that modulates the bottleneck via FiLM, so
+                multiple overlapping targets are attenuated in one forward pass.
               </li>
               <li>
                 <strong>Extensible target vocabulary.</strong> Each sound class
@@ -240,16 +245,6 @@
                 encoder, held in an external store. Custom classes are enrolled
                 by encoding user recordings into the same space, leaving the
                 network weights unchanged.
-              </li>
-              <li>
-                <strong>Graded attenuation.</strong> The output is interpolated
-                with the unprocessed input,
-                <span class="formula"
-                  ><i>y</i> = (1 − <i>α</i>)<i>x</i> + <i>α</i><i>x̂</i></span
-                >, spanning pass-through (<i>α</i> = 0) to full attenuation (<i
-                  >α</i
-                >
-                = 1).
               </li>
             </ul>
           </div>
